@@ -10,6 +10,15 @@ li {
 	list-style: none;
 }
 
+body {
+  background-color: #333;
+}
+
+
+
+
+
+
 .navbar {
    background-color: transparent;
    background: transparent;
@@ -221,14 +230,24 @@ top: 40px;
 /*------MASONRY-----------------------------------*/
 
 
+.grid {
+  max-width: 1200px;
+}
+
 .grid-item {
   width: 300px;
-  height: 250px;
+  height: auto;
   float: left;
   background: #ccc;
   border: 2px solid #ccc;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin: 10px;
+  border-radius: 4px;
+}
+
+.grid-item:hover {
+  background-color: #FF3399;
+  border-color: #FF3399;
 }
 
 .grid-item--width2 { width: 300px; }
