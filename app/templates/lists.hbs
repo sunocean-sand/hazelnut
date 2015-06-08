@@ -45,12 +45,16 @@
 
 
 		<div class="row">
+      <div class="grid js-masonry"
+  data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 200, "isFitWidth": true, "gutter: 10" }'>
+
+
         {{#each list in model}}
-        <div class="col-lg-4 col-sm-4 col-xs-12">
+        {{!div class="col-lg-4 col-sm-4 col-xs-12"}}
             
             {{#link-to "todo" list}}
-            <div class="panel panel-default">
-              <div class="panel-body text-center">
+            <div class="grid">
+              <div class="grid-item grid-item--width2 text-center">
                 <div class="center block">
                   
                   <h3>{{list.title}}</h3>
@@ -67,14 +71,15 @@
             </div>
             {{/link-to}}
 
-        </div>
         {{/each}}
+
       </div>
+    </div>
 
 
 
 
-	</div>
+	</div>{{!container fluid closing}}
 
 	<!--div class="small-6 columns">
 		{{outlet}}

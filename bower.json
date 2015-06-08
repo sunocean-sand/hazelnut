@@ -16,7 +16,8 @@
     "emberfire": "~1.4.4",
     "bootstrap": "~3.3.4",
     "moment": "~2.10.2",
-    "momentjs": "~2.10.2"
+    "momentjs": "~2.10.2",
+    "masonry": "~3.3.0"
   },
   "devDependencies": {},
   "resolutions": {
