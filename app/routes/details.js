@@ -40,10 +40,11 @@ export default Ember.Route.extend({
 
 			this.controllerFor(this.routeName).set('newComment', '');
 
+
 			comment.save().then(function(comment) {
-				todo.get('comments').addObject(comment);
+				todo.get('comment').addObject(comment);
 				todo.save();
-				user.get('comments').addObject(comment);
+				user.get('comment').addObject(comment);
 				user.save();
 			});
 
