@@ -50,7 +50,8 @@ export default Ember.Route.extend({
 		},
 
 
-
+		//it is counting helper, but adding user id instead of uid
+		//unable to get user picture
 		countMe: function() {
 
 			var user = this.controllerFor('application').get('model');
