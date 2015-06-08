@@ -1,5 +1,5 @@
 {
-  "name": "crepe",
+  "name": "nutella",
   "dependencies": {
     "ember": "1.11.1",
     "ember-cli-shims": "ember-cli/ember-cli-shims#0.0.3",
@@ -11,6 +11,15 @@
     "ember-resolver": "~0.1.15",
     "jquery": "^1.11.1",
     "loader.js": "ember-cli/loader.js#3.2.0",
-    "qunit": "~1.17.1"
+    "qunit": "~1.17.1",
+    "foundation": "~5.5.0",
+    "emberfire": "~1.4.4",
+    "bootstrap": "~3.3.4",
+    "moment": "~2.10.2",
+    "momentjs": "~2.10.2"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "jquery": "1.11.1"
   }
 }
