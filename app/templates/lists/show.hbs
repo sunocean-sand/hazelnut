@@ -1,15 +1,16 @@
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
 	<div class="container-fluid">
 
-
+		<div class="grey-background">
 
 		<div class="row">
 			<div class="pull-right">
 			{{#link-to "manage"}} Manage People {{fa-icon "coffee"}} {{/link-to}}
 			</div>
 		</div>
-
-
 
 
 		<div class="row">
@@ -42,22 +43,25 @@
 
 				{{!helper count}}
 				<span class="badge">14 hands</span>
-
 			</div>
+		
 
 
-		</div>
-
-
+		</div>{{!row closing}}
 		<br><br>
+		
+		</div>{{!grey background closing}}
 
+		
+
+
+		<br>
 
 		<div class="row">
 			<div class="col-xs-10 col-xs-offset-1">
 				{{outlet "todos"}}
 			</div>
 		</div>
-
 
 
 

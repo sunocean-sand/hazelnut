@@ -56,6 +56,8 @@ li {
 
 
 
+
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -78,6 +80,14 @@ li {
   top: 0;
   left: 0;
   min-height: 400px;
+}
+
+
+
+
+.grey-background {
+  background-color: #cccccc;
+  //background-color: #D0DAE0;
 }
 
 
@@ -126,13 +136,17 @@ input{
 }
 
 
+
+
+
+
 .btn-pink {
   background-color: #FF3399;
   border-color: #FF3399;
 }
 .btn-pink:hover {
-  background-color: #3bf7c8;
-  border-color: #3bf7c8;
+  background-color: #ff66b3;
+  border-color: #ff66b3;
 }
 .btn-pink:focus,
 .btn-pink:active,
@@ -155,6 +169,9 @@ fieldset[disabled] .btn-pink.active {
   background-color: #FF3399;
   border-color: #FF3399;
 }
+
+
+
 
 
 
