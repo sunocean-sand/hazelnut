@@ -184,6 +184,42 @@ fieldset[disabled] .btn-pink.active {
 
 
 
+.btn-gray {
+  background-color: #333;
+  border-color: #333;
+}
+.btn-gray:hover {
+  background-color: #5b5b5b;
+  border-color: #5b5b5b;
+}
+.btn-gray:focus,
+.btn-gray:active,
+.btn-gray.active {
+  background-color: #333;
+  border-color: #333;
+}
+.btn-gray.disabled:hover,
+.btn-gray.disabled:focus,
+.btn-gray.disabled:active,
+.btn-gray.disabled.active,
+.btn-gray[disabled]:hover,
+.btn-gray[disabled]:focus,
+.btn-gray[disabled]:active,
+.btn-gray[disabled].active,
+fieldset[disabled] .btn-gray:hover,
+fieldset[disabled] .btn-gray:focus,
+fieldset[disabled] .btn-gray:active,
+fieldset[disabled] .btn-gray.active {
+  background-color: #333;
+  border-color: #333;
+}
+
+
+
+
+
+
+
 /*
 .bubble 
 {
