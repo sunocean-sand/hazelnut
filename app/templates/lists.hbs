@@ -50,17 +50,19 @@
             
             {{#link-to "todo" list}}
             <div class="panel panel-default">
-              <div class="panel-body">
+              <div class="panel-body text-center">
+                <div class="center block">
                   
                   <h3>{{list.title}}</h3>
                   <p>{{list.user.displayName}}</p>
 
                   {{!number of hands}}
-                  	<br>
-					<p>
-					<span class="badge pull-left">14 hands</span>
-					</p>
-                  
+                  <br>
+        					<p>
+        					<span class="badge">14 hands</span>
+        					</p>
+
+                </div>  
               </div>
             </div>
             {{/link-to}}
