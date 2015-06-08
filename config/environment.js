@@ -17,7 +17,7 @@ for (var dev in ifaces) {
 module.exports = function(environment) {
   var ENV = {
     firebase: 'https://nutella.firebaseio.com/',
-    modulePrefix: 'nutella',
+    modulePrefix: 'crepe',
     environment: environment,
     baseURL: '/',
     defaultLocationType: 'auto',
