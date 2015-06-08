@@ -1,4 +1,3 @@
-//environment.js
 
 /* jshint node: true */
 
@@ -68,13 +67,13 @@ module.exports = function(environment) {
   }
 
   if (environment === 'staging') {
-    ENV.apiUrl = 'http://nutella-staging.herokuapp.com/api/v1';
+    ENV.apiUrl = 'http://crepe-staging.herokuapp.com/api/v1';
     ENV.staging = true;
   }
 
 
   if (environment === 'production') {
-    ENV.apiUrl = 'http://nutella.herokuapp.com/api/v1';
+    ENV.apiUrl = 'http://crepe.herokuapp.com/api/v1';
     ENV.production = true;
   }
 
