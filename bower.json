@@ -20,6 +20,6 @@
   },
   "devDependencies": {},
   "resolutions": {
-    "jquery": "1.11.1"
+    "jquery": "^1.11.1"
   }
 }

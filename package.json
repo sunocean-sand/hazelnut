@@ -1,7 +1,7 @@
 {
-  "name": "nutella",
+  "name": "crepe",
   "version": "0.0.0",
-  "description": "Small description for nutella goes here",
+  "description": "Small description for crepe goes here",
   "private": true,
   "directories": {
     "doc": "doc",
