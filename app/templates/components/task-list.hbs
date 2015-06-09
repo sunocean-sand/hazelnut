@@ -1,0 +1,45 @@
+<article class="task-list">
+
+	<div class="row">
+
+		<div class="col-xs-8 col-xs-offset-2">
+
+			{{!input type="text" value=newTodoTitle action="createTodo" placeholder="Enter a todo"}}
+
+
+		{{!task list}}
+			<ul class="list-group">
+
+					{{#link-to "details" todo}}
+
+					<li class="list-group-item">
+
+						{{!task}}
+						{{input type ="checkbox" checked=todo.isCompleted}}
+						{{#if todo.isEditing}}
+							{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+						{{else}}
+
+							{{model.todo.title}}
+							<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
+							<a href="#" {{action "deleteTodo" todo.model.id}}>{{fa-icon "remove"}}</a>
+						{{/if}}
+
+						{{!count me in button}}
+						<button class="btn-pink pull-right">count me in</button>
+
+						{{!number of hands}}
+						<p>
+						<span class="badge pull-left">14 hands</span>
+						</p>
+
+					</li>
+
+					{{/link-to}}
+
+			</ul>
+		</div>
+
+	</div>
+
+</article>
