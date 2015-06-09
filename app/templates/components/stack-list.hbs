@@ -1,0 +1,35 @@
+<article class="stack-list">
+
+<div class="row">
+  <div class="grid js-masonry"
+  data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 200, "isFitWidth: true", "gutter: 20" }'>
+
+
+        {{!#each list in model}}
+        {{!div class="col-lg-4 col-sm-4 col-xs-12"}}
+            
+            {{#link-to "honeybee" list_id}}
+            <div class="grid">
+              <div class="grid-item grid-item--width2 text-center">
+                <div class="center block">
+                  
+                  <h3>{{title}}</h3>
+                  <p>{{displayName}}</p>
+
+                  {{!number of hands}}
+                  <br>
+        					<p>
+        					<span class="badge">14 hands</span>
+        					</p>
+
+                </div>  
+              </div>
+            </div>
+            {{/link-to}}
+
+        {{!/each}}
+
+      </div>
+    </div>
+
+</article>
