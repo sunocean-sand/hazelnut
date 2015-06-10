@@ -16,4 +16,5 @@ export default Router.map(function() {
   this.route('honeybee', {path: 'stacks/:stack_id'});
   this.route('lavender', {path: 'stacks/:stack_id/:task_id'});
   this.route('manage', {path: 'stacks/:stack_id/manage'});
+  this.route('profile');
 });

@@ -1,0 +1,23 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<div class="container-fluid">
+<div class="center-block text-center">
+
+
+	{{!user image}}
+	<span><img src={{session.user.imageThumbUrl}} height="200" width="200" class="img-circle"></span>
+
+	<br><br>
+
+	<div class="commentText">{{!white coloring}}
+
+		{{!user name - editable}}
+		<p>{{session.user.displayName}}</p>
+
+		{{!user email - editable}}
+		<p>{{session.user.email}}</p>
+
+		{{!user phone - editable}}
+
+	</div>
+</div>
+</div>

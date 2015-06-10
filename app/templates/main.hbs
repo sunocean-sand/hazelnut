@@ -43,8 +43,7 @@
 
 		{{#each model as |list|}}
 			{{#link-to 'honeybee' list}}
-			{{#stack-list title=list.title displayName=list.user.displayName}}
-			{{/stack-list}}
+			{{stack-list title=list.title displayName=list.user.displayName}}
 			{{/link-to}}
 		{{/each}}
 
