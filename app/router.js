@@ -7,9 +7,13 @@ var Router = Ember.Router.extend({
 
 export default Router.map(function() {
   this.resource('lists', {path: '/'}, function() {
-    this.route('show', {path: 'lists/:list_id'} );
+    this.route('show', {path: 'todos/:list_id'} );
   });
   this.route('todo', {path: 'todos/:todo_id'});
   this.route('details', {path: 'todos/:todo_id/details'});
-  this.route('manage', {path: 'todos/:todo_id/manage'});
+
+  this.route('main', {path: 'stacks'});
+  this.route('honeybee', {path: 'stacks/:stack_id'});
+  this.route('lavender', {path: 'stacks/:stack_id/:task_id'});
+  this.route('manage', {path: 'stacks/:stack_id/manage'});
 });
