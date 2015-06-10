@@ -1,19 +1,18 @@
-{{outlet}}
 {{!stack detail page with task list}}
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<div class="container-fluid">
 
 
-		{{#stack-detail}}
-		{{/stack-detail}}
+		{{stack-detail title=model.title isEditing=isEditing}}
 
-
+	
 		{{input type="text" value=newTodoTitle action="createTodo" placeholder="Enter a todo"}}
 
 
-		{{#each model as |todo|}}
-		  {{#task-list title=todo.title}}
-		  {{/task-list}}
+		{{#each model.todos as |t|}}
+			{{#link-to "lavender" t}}
+				{{task-list title=t.title}}
+			{{/link-to}}
 		{{/each}}
 
 
