@@ -1,26 +1,22 @@
-{{outlet}}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<div class="container-fluid">
+
+
 
 <div class="row center-block text-center">
+<div class="grey-background">
+
+	{{!manage people title}}
+	<h4>Manage People</h4>
 
 	{{!stack title}}
-		<h4>{{title}}</h4>
-		<small>created by {{model.user.displayName}}</small>
+	<h4>{{title}}</h4>
 
-	{{#each task in model.tasks}}
-		<table class="table table-hover">
-		{{!task title}}
-				<th><p>task details</p></th>
+</div>
+	{{!#each model.list.todo as |todo|}}
+		{{helper-list title=todo.title helper=todo.helper.user.displayName}}
+	{{!/each}}
 
-		{{!helpers by tasks}}
-				<tr>
-				{{!name}}
-				<td><p>name<img src={{model.helper.user.imageThumbUrl}} height="50" width="50" class="img-circle"></p></td>
-				{{!email}}
-
-				{{!phone number}}
-
-				</tr>
-		</table>
-	{{/each}}
+</div>
 
 </div>

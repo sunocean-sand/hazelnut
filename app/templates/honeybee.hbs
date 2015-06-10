@@ -10,7 +10,7 @@
 
 
 		{{#each model.todos as |t|}}
-			{{#link-to "lavender" t}}
+			{{#link-to 'lavender' t}}
 				{{task-list title=t.title}}
 			{{/link-to}}
 		{{/each}}

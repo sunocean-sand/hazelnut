@@ -10,7 +10,7 @@
 		{{!task list}}
 			<ul class="list-group">
 
-					{{#link-to "details" todo}}
+					{{!#link-to "details" todo}}
 
 					<li class="list-group-item">
 
@@ -20,7 +20,7 @@
 							{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
 						{{else}}
 
-							{{model.todo.title}}
+							{{title}}
 							<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
 							<a href="#" {{action "deleteTodo" todo.model.id}}>{{fa-icon "remove"}}</a>
 						{{/if}}
@@ -35,7 +35,7 @@
 
 					</li>
 
-					{{/link-to}}
+					{{!/link-to}}
 
 			</ul>
 		</div>

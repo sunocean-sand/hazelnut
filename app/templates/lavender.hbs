@@ -1,10 +1,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <div class="container-fluid">
 
-	{{#task-detail}}{{/task-detail}}
+	{{task-detail title=model.title user=model.user.displayName}}
 
-	{{#each model as |comment|}}
-		{{#comment-thread}}{{/comment-thread}}
+	{{create-comment}}
+
+	{{#each model.comment as |comment|}}
+		{{comment-thread message=comment.message}}
 	{{/each}}
 
 </div>
