@@ -13,9 +13,9 @@
 	<h4>{{title}}</h4>
 
 </div>
-	{{!#each model.list.todo as |todo|}}
+	{{#each model.todo as |todo|}}
 		{{helper-list title=todo.title helper=todo.helper.user.displayName}}
-	{{!/each}}
+	{{/each}}
 
 </div>
 

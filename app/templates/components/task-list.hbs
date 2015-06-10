@@ -11,9 +11,9 @@
 			<ul class="list-group">
 
 					{{!#link-to "details" todo}}
-
+				
 					<li class="list-group-item">
-
+						
 						{{!task}}
 						{{input type ="checkbox" checked=todo.isCompleted}}
 						{{#if todo.isEditing}}
@@ -26,12 +26,10 @@
 						{{/if}}
 
 						{{!count me in button}}
-						<button class="btn-pink pull-right">count me in</button>
+						{{count-in action="countMe"}}
 
 						{{!number of hands}}
-						<p>
-						<span class="badge pull-left">14 hands</span>
-						</p>
+						{{helper-count}}
 
 					</li>
 

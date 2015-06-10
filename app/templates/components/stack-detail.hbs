@@ -30,7 +30,7 @@
 			<div class="col-xs-12 text-center">
 				{{!stack creator}}
 				<p><small>by</small>
-				<small>{{model.list.user.displayName}}</small></p>
+				<small>{{creator}}</small></p>
 
 				{{!custom url}}
 				<ul class="url">
@@ -41,7 +41,7 @@
 				<img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle">
 
 				{{!helper count}}
-				<span class="badge">14 hands</span>
+				{{helper-count}}
 			</div>
 		
 

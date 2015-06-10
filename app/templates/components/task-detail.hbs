@@ -6,23 +6,20 @@
 			<div class="row center-block text-center">
 				<br>
 				<h4>{{title}}</h4>
-				<small>created by {{user}}</small>
+				<small>created by {{creator}}</small>
 
 				<p>task details</p>
 
 
 				{{!helper count}}
-				<p>
-				<span class="badge">14 hands</span>
-				</p>
-
+				{{helper-count}}
 
 				{{!helpers image}}
 				<p><img src={{model.helper.user.imageThumbUrl}} height="50" width="50" class="img-circle"></p>
 
 
 				{{!count me in button}}
-				<button class="btn-pink" {{action "countMe"}}>count me in</button>
+				{{count-in action="countMe"}}
 				
 
 			</div>

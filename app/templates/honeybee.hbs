@@ -3,10 +3,10 @@
 	<div class="container-fluid">
 
 
-		{{stack-detail title=model.title isEditing=isEditing}}
+		{{stack-detail title=model.title creator=model.user.displayName isEditing=model.isEditing}}
 
 	
-		{{input type="text" value=newTodoTitle action="createTodo" placeholder="Enter a todo"}}
+		{{input type="text" value=model.newTodoTitle action="createTodo" placeholder="Enter a todo"}}
 
 
 		{{#each model.todos as |t|}}
