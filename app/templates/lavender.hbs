@@ -1,9 +1,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <div class="container-fluid">
 
-	{{task-detail store=store title=model.title creator=model.user.displayName todo=model user=controllers.application.model}}
+	{{task-detail store=store title=model.title creator=model.user.displayName todo=model user=controllers.application.model helpers=model.helper.user.displayName}}
 
-	{{create-comment}}
+
+	<div class="row center-block form-inline">
+		<div class="commenterImage">
+			<img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle">
+		</div>
+		<div class="commentText">
+			{{!creating comment}}
+			{{input type="text" value=newComment action="createComment" placeholder="say something.."}}
+		</div>
+	</div>
+
 
 	{{#each model.comment as |comment|}}
 		{{comment-thread message=comment.message}}
