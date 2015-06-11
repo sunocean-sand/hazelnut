@@ -8,14 +8,14 @@ export default Ember.Route.extend({
 	},
 
 	actions: {
+
 		createTodo: function() {
 			var newTodoTitle = this.controllerFor(this.routeName).get('newTodoTitle');
-			//var user = this.controllerFor('application').get('model');
-			var user = this.session.get('uid');
+			var user = this.controllerFor('application').get('model');
 
-			console.log(this);
+			//console.log(this);
 
-			Ember.Logger.info('user:', user);
+			//Ember.Logger.info('user:', user);
 
 			if (Ember.isBlank(newTodoTitle)) {return false;}
 
