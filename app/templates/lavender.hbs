@@ -16,7 +16,7 @@
 
 
 	{{#each model.comment as |comment|}}
-		{{comment-thread message=comment.message}}
+		{{comment-thread message=comment.message user=comment.user}}
 	{{/each}}
 
 </div>
