@@ -10,8 +10,8 @@
 
 
 		{{#each model.todos as |t|}}
-			{{#link-to 'lavender' t}}
-				{{task-list title=t.title}}
+			{{#link-to 'lavender' model.id t.id}}
+				{{task-list todo=t user=controllers.application.model title=t.title store=store}}
 			{{/link-to}}
 		{{/each}}
 

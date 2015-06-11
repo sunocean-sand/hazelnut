@@ -47,14 +47,14 @@ export default Ember.Component.extend({
 			});
 		},
 
-
+/*
 		deleteList: function() {
 			var list = this.modelFor(this.routeName);
 			list.destroyRecord();
 
 			this.transitionTo('lists');
 		},
-
+*/
 
 		updateTitle: function() {
 			var model = this.modelFor(this.routeName);
