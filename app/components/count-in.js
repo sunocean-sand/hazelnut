@@ -1,18 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
 	actions: {
 		//it is counting helper, but adding user id instead of uid
 		//unable to get user picture
 		countMe: function() {
 
-			var user = this.controllerFor('application').get('model');
-			var todo = this.modelFor(this.routeName);
-			//var todo = this.store.find('todo', params.todo_id);
-			//var todo = this.store.find('todo', id);
-			//var todo = this.controllerFor('details').get('model');
+			var user= this.get('user');
 
-			var helper = this.store.createRecord('helper', {
+			var todo= this.get('todo');
+
+			var store = this.get('store');
+
+			var helper = store.createRecord('helper', {
 				user: user,
 				todo: todo,
 			});
