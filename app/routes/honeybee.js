@@ -39,36 +39,5 @@ export default Ember.Route.extend({
 			this.transitionTo('todo');
 		},
 
-
-		deleteTodo: function(id) {
-			var list = this.modelFor(this.routeName);
-
-			this.store.find('todo', id).then(function(todo) {
-				list.get('todos').removeObject(todo);
-				list.save();
-
-				todo.destroyRecord();
-			});
-		},
-
-
-		deleteList: function() {
-			var list = this.modelFor(this.routeName);
-			list.destroyRecord();
-
-			this.transitionTo('lists');
-		},
-
-
-		updateTitle: function() {
-			var model = this.modelFor(this.routeName);
-
-			if (Ember.isBlank(model.get('title'))) {
-				model.rollback();
-			}
-			else {
-				model.save();
-			}
-		},
 	}
 });
