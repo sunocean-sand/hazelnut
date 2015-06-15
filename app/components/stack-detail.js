@@ -7,26 +7,28 @@ export default Ember.Component.extend({
 	actions: {
 
 		deleteList: function() {
-			//var list = this.modelFor('honeybee');
-			var list = this.store.find('list');
-			//var list = this.controllerFor('honeybee').get('model');
 
-			debugger;
+			var store = this.get('store');
+			var list = this.get('list');
 			
 			list.destroyRecord();
 
-			this.transitionTo('lists');
+			//this.transitionTo('main');
+			this.sendAction('go');
 		},
 
 		updateTitle: function() {
-			var model = this.modelFor(this.routeName);
-			//var list = this.
+			//var model = this.modelFor(this.routeName);
+			
+			var store = this.get('store');
+			var list = this.get('list');
 
-			if (Ember.isBlank(model.get('title'))) {
-				model.rollback();
+			if (Ember.isBlank(list.get('title'))) {
+				list.rollback();
 			}
 			else {
-				model.save();
+				list.save();
+				this.set('isEditing', false);
 			}
 		},
 

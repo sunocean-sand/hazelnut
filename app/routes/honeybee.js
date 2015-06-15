@@ -39,5 +39,10 @@ export default Ember.Route.extend({
 			this.transitionTo('todo');
 		},
 
+		go: function() {
+			console.log('transition');
+			this.transitionTo('main');
+		}
+
 	}
 });
