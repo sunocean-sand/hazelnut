@@ -32,11 +32,16 @@ export default Ember.Component.extend({
 				list.save();
 
 				t.destroyRecord();
+
+				//need to refresh and not go to stack page
 			});
 		},
 
 		updateTitle: function() {
-			var model = this.modelFor(this.routeName);
+			//var model = this.modelFor(this.routeName);
+
+			var store = this.get('store');
+			var model = this.get('todo');
 
 			if (Ember.isBlank(model.get('title'))) {
 				model.rollback();
