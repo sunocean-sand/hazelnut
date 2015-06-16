@@ -6,12 +6,8 @@ export default Ember.Component.extend({
 
 	actions: {
 
-		gotIt: function() {
+		dismiss: function() {
     		this.sendAction('dismiss');
-    	},
-
-    	change: function() {
-    		this.sendAction('changeSalutation');
     	},
 
     	loginFacebook: function() {
@@ -29,7 +25,7 @@ export default Ember.Component.extend({
     	createUser: function() {
     		this.sendAction('createUser');
     	},
-    	
+
 	},
 
 });
