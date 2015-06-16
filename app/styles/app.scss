@@ -43,14 +43,13 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
 }
 
 .overlaytext { 
   color:#fff;
   position:absolute;
-  z-index:12;
-  top:30%;
+  z-index:1;
+  top:7%;
   left:0;
   width:100%;
   text-align:center;
@@ -71,10 +70,6 @@ body {
 /* Carousel base class */
 .carousel {
   margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 1;
 }
 
 /* Declare heights because of positioning of img element */
@@ -100,7 +95,7 @@ body {
 
 
 
-
+/* LOG IN MODAL -------------------------------*/
 
 .modal {
   position: relative;

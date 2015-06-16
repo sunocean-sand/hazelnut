@@ -26,7 +26,13 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a {{action 'openModal' 'modal'}}>{{fa-icon "user"}}</a></li>
+        {{!--<li><a {{action 'openModal' 'modal'}}>{{fa-icon "user"}}</a></li>--}}
+
+        <li>
+          {{#link-to (query-params foo="yes") tagName="button"}}
+          {{fa-icon "user"}}
+          {{/link-to}}
+        </li>
 
         {{#if session.isAuthenticated}}
 
@@ -49,9 +55,8 @@
 </nav>
 
 
+{{liquid-modal}}
+
 {{liquid-outlet "modal"}}
-{{!outlet "modal"}}
 
-{{outlet}}
-
-{{!liquid-outlet name="main"}}
+{{liquid-outlet}}

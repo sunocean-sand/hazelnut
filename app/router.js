@@ -6,15 +6,25 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  //this.resource('lists', {path: '/'}, function() {
-  //  this.route('show', {path: 'todos/:list_id'} );
-  //});
-  //this.route('todo', {path: 'todos/:todo_id'});
-  //this.route('details', {path: 'todos/:todo_id/details'});
+	
+	this.modal('login-modal', {
+		withParams: 'foo',
+		otherParams: {
+			modalMessage: "message"
+		},
+		actions: {
+			changeSalutation: "changeSalutation",
+			loginFacebook: "loginFacebook",
+			loginTwitter: "loginTwitter",
+			login: "login",
+			createUser: "createUser",
+		}
+	});
 
-  this.route('main', {path: '/'});
-  this.route('honeybee', {path: '/:stack_id'});
-  this.route('lavender', {path: '/:stack_id/:task_id'});
-  this.route('manage', {path: '/:stack_id/manage'});
-  this.route('profile');
+	this.route('main', {path: '/'});
+	this.route('honeybee', {path: '/:stack_id'});
+	this.route('lavender', {path: '/:stack_id/:task_id'});
+	this.route('manage', {path: '/:stack_id/manage'});
+
+	this.route('profile');
 });
