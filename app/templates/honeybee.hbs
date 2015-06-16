@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 
 
-		{{stack-detail title=model.title creator=model.user.displayName isEditing=model.isEditing}}
+		{{stack-detail list=model title=model.title creator=model.user.displayName isEditing=model.isEditing store=store}}
 
 	
 		{{input type="text" value=newTodoTitle action="createTodo" placeholder="Enter a todo"}}
@@ -11,7 +11,7 @@
 
 		{{#each model.todos as |t|}}
 			{{#link-to 'lavender' model.id t.id}}
-				{{task-list todo=t user=controllers.application.model title=t.title store=store}}
+				{{task-list todo=t user=controllers.application.model title=t.title store=store list=model}}
 			{{/link-to}}
 		{{/each}}
 

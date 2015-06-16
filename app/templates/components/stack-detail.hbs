@@ -4,7 +4,7 @@
 
 		<div class="row">
 			<div class="pull-right">
-			{{#link-to "manage" this}}
+			{{#link-to "manage"}}
 			<button class="btn-gray"> Manage People {{fa-icon "coffee"}}</button> 
 			{{/link-to}}
 			</div>
@@ -16,12 +16,12 @@
 			{{!stack title}}
 			<div class="col-xs-12 center-block text-center">
 				{{#if isEditing}}
-					{{edit-title type="text" value=model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+					{{edit-title type="text" value=title focus-out="updateTitle" insert-newline="updateTitle"}}
 				{{else}}
 
 					<h4>{{title}}</h4>
 					<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
-					<a href="#" {{action "deleteList"}}>{{fa-icon "remove"}}</a>
+					<a href="#" {{action "deleteList" list.id}}>{{fa-icon "remove"}}</a>
 				{{/if}}
 			</div>
 

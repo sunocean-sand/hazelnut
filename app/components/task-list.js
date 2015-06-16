@@ -20,14 +20,18 @@ export default Ember.Component.extend({
 	
 	actions: {
 
-		deleteTodo: function(id) {
-			var list = this.modelFor(this.routeName);
+		deleteTodo: function() {
+			//var list = this.modelFor(this.routeName);
 
-			this.store.find('todo', id).then(function(todo) {
+			var store = this.get('store');
+			var list = this.get('list');
+			var t = this.get('todo');
+
+			this.store.find('todo').then(function(todo) {
 				list.get('todos').removeObject(todo);
 				list.save();
 
-				todo.destroyRecord();
+				t.destroyRecord();
 			});
 		},
 
@@ -40,6 +44,11 @@ export default Ember.Component.extend({
 			else {
 				model.save();
 			}
+		},
+
+
+		editTitle: function() {
+			this.set('isEditing', true);
 		},
 	},
 });
