@@ -45,9 +45,7 @@ export default Ember.Route.extend({
 				//open login modal
 				this.transitionTo({queryParams: {foo: true}});
 			}
-		//1
 			
-		//5
 			
  
 		}

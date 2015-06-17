@@ -1,44 +1,44 @@
-
-<!-- Carousel
-================================================== -->
-<div class="overlaytext">
-	<h1><strong>BUILD COMMUNITY</strong></h1>
-
-		<p class="lead">what do you want to make happen today?</p>
-
-		<div class="col-xs-4 col-xs-offset-4">
-			<div class="input-group input-group-lg center-block">
-			{{input class="form-control" type="text" value=newListTitle action="createList" placeholder="Create a Stack"}}
-			</div>
-		</div>
-</div>
-
-
-<div id="myCarousel" class="carousel slide">
-    <!-- Indicators -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="/assets/images/candles.jpg" class="img-responsive">
-    </div>
-</div>
-</div>
-<!-- /.carousel -->
-
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<div class="container-fluid">
+	<div class="container-fluid no-gutter">
+
 
 		<div class="row">
-			<div class="col-xs-12 text-center">
+		<div class="text-center">
 
-				<h4>Discover stacks in the works</h4>
+			<h1 class="white"><strong>BUILD A LASTING COMMUNITY</strong></h1>
 
+			<p class="lead white">The fastest way to mobilize thousands, in real time</p>
+
+		</div>
+		</div>
+
+
+
+
+		<div class="col-xs-12 col-md-4 col-md-offset-4">
+			<div class="input-group input-group-lg center-block">
+			{{input class="form-control" type="text" value=newListTitle action="createList" placeholder="Create a campaign/project/event"}}
+			</div>
+		</div>
+
+
+
+
+		<div class="row">
+			<div class="text-center">
+				
 				<br><br>
+				<div class="pink-background">
+				<p class="white">Discover</p></div>
+
+				<br>
 
 			</div>
 		</div>
 
+		<div class="row center-block">
 		<div class="grid js-masonry"
-  data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 200, "isFitWidth": true, "gutter: 20" }'>
+  data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 250, "isFitWidth": true, "gutter": 20 }'>
 
 		{{#each model as |list|}}
 			{{#link-to 'honeybee' list}}
@@ -46,6 +46,7 @@
 			{{/link-to}}
 		{{/each}}
 
+		</div>
 		</div>
 
 	</div>

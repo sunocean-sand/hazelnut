@@ -1,14 +1,13 @@
 {{!task detail with comments}}
 <article class="task-detail">
 
-	<div class="grey-background">
-
 			<div class="row center-block text-center">
 				<br>
-				<h4>{{title}}</h4>
-				<small>created by {{creator}}</small>
+				<h4 class="white">{{title}}</h4>
+				<small class="white">created by {{creator}}</small>
 
-				<p>task details</p>
+				<br>
+				<p class="white">task details</p>
 
 
 				{{!helper count}}
@@ -16,13 +15,12 @@
 
 				{{!helpers image}}
 				<p><img src={{model.helper.user.imageThumbUrl}} height="50" width="50" class="img-circle"></p>
-
+				<p>{{helpers}}</p>
 
 				{{!count me in button}}
 				{{count-in store=store user=user todo=todo}}
 				
 
 			</div>
-	</div>{{!closing grey-background}}
 
 </article>

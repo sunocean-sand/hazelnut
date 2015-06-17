@@ -5,8 +5,9 @@
 
 		{{stack-detail list=model title=model.title creator=model.user.displayName isEditing=model.isEditing store=store}}
 
-	
+		<div class="col-xs-12 col-md-6 col-md-offset-3">
 		{{input type="text" value=newTodoTitle action="createTodo" placeholder="Enter a todo"}}
+		</div>
 
 
 		{{#each model.todos as |t|}}
