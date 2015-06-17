@@ -21,8 +21,8 @@
 						{{else}}
 
 							<a class="white">{{title}}</a>
-							<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
-							<a href="#" {{action "deleteTodo" t.id}}>{{fa-icon "remove"}}</a>
+							<i class="black" {{action "editTitle"}}>{{fa-icon "pencil"}}</i>
+							<i class="black" {{action "deleteTodo" t.id}}>{{fa-icon "remove"}}</i>
 						{{/if}}
 
 						{{!count me in button}}

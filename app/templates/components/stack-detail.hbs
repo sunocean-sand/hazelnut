@@ -13,14 +13,17 @@
 
 			{{!stack title}}
 			<div class="col-xs-12 center-block text-center">
+				<div class="inline-block">
+
 				{{#if isEditing}}
 					{{edit-title type="text" value=title focus-out="updateTitle" insert-newline="updateTitle"}}
 				{{else}}
 
 					<h4 class="white">{{title}}</h4>
-					<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
-					<a href="#" {{action "deleteList" list.id}}>{{fa-icon "remove"}}</a>
+					<i {{action "editTitle"}}>{{fa-icon "pencil" class="white"}}</i>
+					<i {{action "deleteList" list.id}}>{{fa-icon "remove"}}</i>
 				{{/if}}
+			</div>
 			</div>
 
 
