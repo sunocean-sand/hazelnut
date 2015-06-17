@@ -17,6 +17,7 @@ body {
 
 
 
+
 .navbar {
    background-color: transparent;
    background: transparent;
@@ -43,14 +44,13 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
 }
 
 .overlaytext { 
   color:#fff;
   position:absolute;
-  z-index:12;
-  top:30%;
+  z-index:1;
+  top:7%;
   left:0;
   width:100%;
   text-align:center;
@@ -60,7 +60,22 @@ body {
   color:#fff;
 }
 
+.white {
+  color:#fff;
+}
 
+.black {
+  color:#000;
+}
+
+.pink-background {
+  background-color: #FF3399;
+}
+
+.no-gutter {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 
 
@@ -71,10 +86,6 @@ body {
 /* Carousel base class */
 .carousel {
   margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 1;
 }
 
 /* Declare heights because of positioning of img element */
@@ -100,7 +111,7 @@ body {
 
 
 
-
+/* LOG IN MODAL -------------------------------*/
 
 .modal {
   position: relative;
@@ -270,29 +281,35 @@ top: 40px;
 
 
 .grid {
-  max-width: 1200px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .grid-item {
-  width: 300px;
+  width: 350px;
   height: auto;
   float: left;
-  background: #ccc;
-  border: 2px solid #ccc;
+  background: #515151;
   margin-bottom: 20px;
   margin: 10px;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 
 .grid-item:hover {
-  background-color: #FF3399;
-  border-color: #FF3399;
+  background-color: #666;
 }
 
-.grid-item--width2 { width: 300px; }
+.grid-item--width2 { width: 350px; }
 
 
 
+/*-----task list------*/
+
+.list-group-item {
+  background: #515151;
+  border-color: transparent;
+  border-radius: 0px;
+}
 
 
 

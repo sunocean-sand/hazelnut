@@ -1,8 +1,8 @@
 <article class="task-list">
 
-	<div class="row">
+	<div class="row no-gutter">
 
-		<div class="col-xs-8 col-xs-offset-2">
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
 
 			{{!input type="text" value=newTodoTitle action="createTodo" placeholder="Enter a todo"}}
 
@@ -18,9 +18,9 @@
 							{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
 						{{else}}
 
-							{{title}}
-							<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
-							<a href="#" {{action "deleteTodo" t.id}}>{{fa-icon "remove"}}</a>
+							<a class="white">{{title}}</a>
+							<i class="black" {{action "editTitle"}}>{{fa-icon "pencil"}}</i>
+							<i class="black" {{action "deleteTodo" t.id}}>{{fa-icon "remove"}}</i>
 						{{/if}}
 
 						{{!count me in button}}

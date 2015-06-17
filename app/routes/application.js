@@ -50,6 +50,7 @@ export default Ember.Route.extend({
 				});*/
 		},
 
+/*
 		openModal: function(modal) {
 	      this.render(modal, {
 	        into: 'application',
@@ -62,13 +63,14 @@ export default Ember.Route.extend({
 
 		closeModal: function() {
 			Ember.$('#modal-dialog').removeClass('overlay');
-	      Ember.$('.modal').modal('hide');
+	      	Ember.$('.modal').modal('toggle');
 	      //Ember.$('.overlay').remove();
 	      return this.disconnectOutlet({
 	        outlet: 'modal',
 	        parentView: 'application'
 	      });
 	    },
+	   */
 
 
 //ember-cli-cordova

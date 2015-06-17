@@ -10,33 +10,50 @@ export default Ember.Route.extend({
 	actions: {
 
 		createTodo: function() {
-			var newTodoTitle = this.controllerFor(this.routeName).get('newTodoTitle');
-			var user = this.controllerFor('application').get('model');
 
-			//console.log(this);
+			var session = this.get('session');
 
-			//Ember.Logger.info('user:', user);
+			if (session.isAuthenticated) {
 
-			if (Ember.isBlank(newTodoTitle)) {return false;}
 
-			var list = this.modelFor(this.routeName);
+				var newTodoTitle = this.controllerFor(this.routeName).get('newTodoTitle');
+				var user = this.controllerFor('application').get('model');
 
-			var todo = this.store.createRecord('todo', {
-				title: newTodoTitle,
-				list: list,
-				user: user,
-			});
+				//console.log(this);
 
-			this.controllerFor(this.routeName).set('newTodoTitle', '');
+				//Ember.Logger.info('user:', user);
 
-			todo.save().then(function(todo) {
-				list.get('todos').addObject(todo);
-				list.save();
-				user.get('todos').addObject(todo);
-				user.save();
-			});
+				if (Ember.isBlank(newTodoTitle)) {return false;}
 
-			this.transitionTo('todo');
+				var list = this.modelFor(this.routeName);
+
+				var todo = this.store.createRecord('todo', {
+					title: newTodoTitle,
+					list: list,
+					user: user,
+				});
+
+				this.controllerFor(this.routeName).set('newTodoTitle', '');
+
+				var _this=this;
+
+				todo.save().then(function(todo) {
+					list.get('todos').addObject(todo);
+					list.save();
+					user.get('todos').addObject(todo);
+					user.save().then(function(success) {
+						console.log('success', success);
+						_this.transitionTo('lavender', todo.id);
+					}, function(fail) {
+						console.log('fail', fail);
+					});
+				});
+
+
+			} else {
+				this.transitionTo({queryParams: {foo: true}});
+			}
+
 		},
 
 		go: function() {

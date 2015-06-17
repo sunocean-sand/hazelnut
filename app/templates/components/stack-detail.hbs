@@ -1,7 +1,5 @@
 <article class="stack-detail">
 
-	<div class="grey-background">
-
 		<div class="row">
 			<div class="pull-right">
 			{{#link-to "manage"}}
@@ -15,21 +13,24 @@
 
 			{{!stack title}}
 			<div class="col-xs-12 center-block text-center">
+				<div class="inline-block">
+
 				{{#if isEditing}}
 					{{edit-title type="text" value=title focus-out="updateTitle" insert-newline="updateTitle"}}
 				{{else}}
 
-					<h4>{{title}}</h4>
-					<a href="#" {{action "editTitle"}}>{{fa-icon "pencil"}}</a>
-					<a href="#" {{action "deleteList" list.id}}>{{fa-icon "remove"}}</a>
+					<h4 class="white">{{title}}</h4>
+					<i {{action "editTitle"}}>{{fa-icon "pencil" class="white"}}</i>
+					<i {{action "deleteList" list.id}}>{{fa-icon "remove"}}</i>
 				{{/if}}
+			</div>
 			</div>
 
 
 
 			<div class="col-xs-12 text-center">
 				{{!stack creator}}
-				<p><small>by</small>
+				<p class="white"><small>by</small>
 				<small>{{creator}}</small></p>
 
 				{{!custom url}}
@@ -49,6 +50,5 @@
 		</div>{{!row closing}}
 		<br><br>
 		
-	</div>{{!grey background closing}}
 
 </article>
