@@ -8,11 +8,9 @@
 
 
 		{{!task list}}
-			<ul class="list-group">
-
-					{{!#link-to "details" todo}}
+			{{!#link-to "details" todo}}
 				
-					<li class="list-group-item">
+					<div class="list-group-item">
 						
 						{{!task}}
 						{{input type ="checkbox" checked=todo.isCompleted}}
@@ -31,13 +29,11 @@
 						{{!number of hands}}
 						{{helper-count}}
 
-					</li>
+					</div>
 
 					{{!/link-to}}
 
-			</ul>
-		</div>
-
+			</div>
 	</div>
 
 </article>

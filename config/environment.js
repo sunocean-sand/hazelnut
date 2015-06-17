@@ -15,7 +15,7 @@ for (var dev in ifaces) {
 
 module.exports = function(environment) {
   var ENV = {
-    firebase: 'https://nutella.firebaseio.com/',
+    firebase: 'https://radiant-torch-136.firebaseio.com/',
     modulePrefix: 'crepe',
     environment: environment,
     baseURL: '/',
@@ -37,7 +37,7 @@ module.exports = function(environment) {
       emulate: true,
       emberUrl: 'http://' + '127.0.0.1' + ':4200',
       liveReload: {
-        enabled: true,
+        enabled: false,
         platform: 'ios'
       }
     }

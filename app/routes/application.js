@@ -1,9 +1,4 @@
 import Ember from 'ember';
-//import Firebase from 'firebase';
-//import { moment, ago } from 'ember-moment/computed';
- 
-
-//var ref = new Firebase("https://nutella.firebaseio.com");
 
 
 export default Ember.Route.extend({

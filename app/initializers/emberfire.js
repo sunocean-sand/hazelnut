@@ -44,7 +44,7 @@ function parseAuthData(authData) {
 
 
 var session = Ember.Object.extend({
-	ref : new Firebase("https://nutella.firebaseio.com"),
+	ref : new Firebase("https://radiant-torch-136.firebaseio.com"),
 
 	addFirebaseCallback: function() {
 		var session = this;
