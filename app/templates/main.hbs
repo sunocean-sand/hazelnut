@@ -37,8 +37,9 @@
 		</div>
 
 		<div class="row center-block">
-		<div class="grid js-masonry"
-  data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 250, "isFitWidth": true, "gutter": 20 }'>
+		{{!div class="grid js-masonry"
+  data-masonry-options='{ "itemSelector": ".grid-item", "columWidth": 250, "isFitWidth": true, "gutter": 20 }'}}
+  		{{#masonry-grid}}
 
 		{{#each model as |list|}}
 			{{#link-to 'honeybee' list}}
@@ -46,7 +47,8 @@
 			{{/link-to}}
 		{{/each}}
 
-		</div>
+		{{/masonry-grid}}
+
 		</div>
 
 	</div>
