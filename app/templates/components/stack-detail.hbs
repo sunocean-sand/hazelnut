@@ -19,9 +19,13 @@
 					{{edit-title type="text" value=title focus-out="updateTitle" insert-newline="updateTitle"}}
 				{{else}}
 
+					<div class="edit_hover_class">
 					<h4 class="white">{{title}}</h4>
-					<i {{action "editTitle"}}>{{fa-icon "pencil" class="white"}}</i>
-					<i {{action "deleteList" list.id}}>{{fa-icon "remove"}}</i>
+
+					{{!edit}}
+						<i {{action "editTitle"}}>{{fa-icon "pencil" class="white"}}</i>
+						<i {{action "deleteList" list.id}}>{{fa-icon "remove"}}</i>
+					</div>
 				{{/if}}
 			</div>
 			</div>
