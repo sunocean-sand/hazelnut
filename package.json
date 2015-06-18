@@ -43,7 +43,8 @@
     "ember-masonry-grid": "0.4.1",
     "emberfire": "^1.4.4",
     "grunt": "^0.4.5",
-    "liquid-fire": "0.19.4"
+    "liquid-fire": "0.19.4",
+    "sendgrid": "^1.8.0"
   },
   "dependencies": {
     "ember-cli": "^0.2.3",
