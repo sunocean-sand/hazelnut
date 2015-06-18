@@ -20,7 +20,7 @@
 							{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
 						{{else}}
 
-							<a class="white">{{title}}</a>
+							<p class="white" {{action "editTitle" on="doubleClick"}}>{{title}}</p>
 							<i class="black" {{action "editTitle"}}>{{fa-icon "pencil"}}</i>
 							<i class="black" {{action "deleteTodo" t.id}}>{{fa-icon "remove"}}</i>
 						{{/if}}
