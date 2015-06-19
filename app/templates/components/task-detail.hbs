@@ -7,8 +7,19 @@
 				<small class="white">created by {{creator}}</small>
 
 				<br>
-				<p class="white">task details</p>
 
+				{{#if isEditing}}
+					<div class="col-md-6 col-md-offset-3">
+					{{edit-title type="text" value=detail focus-out="updateDetail" insert-newline="updateDetail" placeholder="add details.."}}
+					</div>
+				{{else}}
+
+			
+				<p class="white" {{action "editDetail" on="doubleClick"}}>{{detail}}</p>
+				
+
+
+				{{/if}}
 
 				{{!helper count}}
 				{{helper-count}}

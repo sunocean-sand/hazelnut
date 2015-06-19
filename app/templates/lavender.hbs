@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <div class="container-fluid">
 
-	{{task-detail store=store title=model.title creator=model.user.displayName todo=model user=controllers.application.model helpers=model.helper.user.displayName}}
+	{{task-detail store=store title=model.title creator=model.user.displayName todo=model user=controllers.application.model helpers=model.helper.user.displayName isEditing=model.isEditing detail=model.detail}}
 
 
 	<div class="row center-block form-inline">
