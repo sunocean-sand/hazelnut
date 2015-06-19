@@ -30,7 +30,7 @@ export default Ember.Route.extend({
 				controller.get("session").loginFacebook().then(function(user) {
 					console.log(user);
 				});
-			this.send('closeModal');
+			this.send('dismiss');
 		},
 
 		loginTwitter: function() {
@@ -38,13 +38,17 @@ export default Ember.Route.extend({
 				controller.get("session").loginTwitter().then(function(user) {
 					console.log(user);
 				});
-			this.send('closeModal');
+			this.send('dismiss');
 		},
 
 
 		logout: function() {
 			this.get('session').logout();
 		},
+
+		dismiss: function() {
+    		this.sendAction('dismiss');
+    	},
 
 		createUser: function() {
 			var controller = this;
