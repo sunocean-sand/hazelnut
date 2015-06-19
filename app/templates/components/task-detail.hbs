@@ -14,9 +14,9 @@
 					</div>
 				{{else}}
 
-			
-				<p class="white" {{action "editDetail" on="doubleClick"}}>{{detail}}</p>
-				
+				<div class="edit_hover_class">
+				<p class="white" {{action "editDetail" on="doubleClick"}}>{{detail}}</p><i {{action "editDetail"}}>{{fa-icon "pencil" class="white"}}</i>
+				</div>
 
 
 				{{/if}}
