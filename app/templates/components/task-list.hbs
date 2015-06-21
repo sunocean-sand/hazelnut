@@ -25,7 +25,7 @@
 						{{else}}
 
 						<span class="edit_hover_class">
-							<span class="white" {{action "editTitle" on="doubleClick"}}>{{title}}</span>
+							<span class="white" {{action "editTitle" on="doubleClick"}}><span class="source-code">{{title}}</span></span>
 							<i class="black" {{action "editTitle"}}>{{fa-icon "pencil"}}</i>
 							<i class="black" {{action "deleteTodo" t.id}}>{{fa-icon "remove"}}</i>
 						</span>
