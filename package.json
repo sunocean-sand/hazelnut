@@ -41,6 +41,7 @@
     "ember-export-application-global": "^1.0.2",
     "ember-localstorage-adapter": "^0.5.3",
     "ember-masonry-grid": "0.4.1",
+    "ember-moment": "1.2.1",
     "emberfire": "^1.4.4",
     "grunt": "^0.4.5",
     "liquid-fire": "0.19.4",

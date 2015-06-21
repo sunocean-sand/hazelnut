@@ -15,9 +15,6 @@ export default Ember.Route.extend({
 
 			if (session.isAuthenticated) {
 
-
-
-
 				var newComment = this.controllerFor(this.routeName).get('newComment');
 				var user = this.controllerFor('application').get('model');
 
@@ -29,6 +26,7 @@ export default Ember.Route.extend({
 					message: newComment,
 					todo: todo,
 					user: user,
+					timestamp: new Date()
 				});
 
 				this.controllerFor(this.routeName).set('newComment', '');

@@ -19,7 +19,8 @@
     "momentjs": "~2.10.2",
     "masonry": "~3.3.0",
     "jquery-masonry": "~3.3.0",
-    "imagesloaded": "~3.1.8"
+    "imagesloaded": "~3.1.8",
+    "ember-cli-moment-shim": "~0.2.0"
   },
   "devDependencies": {},
   "resolutions": {
