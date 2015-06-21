@@ -10,13 +10,13 @@
 		</div>
 		<div class="commentText">
 			{{!creating comment}}
-			{{input type="text" value=newComment action="createComment" placeholder="say something.."}}
+			{{textarea type="text" value=newComment action="createComment" placeholder="say something.." autoresize=true}}
 		</div>
 	</div>
 
 
 	{{#each model.comment as |comment|}}
-		{{comment-thread message=comment.message user=comment.user timestamp=comment.timestamp}}
+		{{comment-thread message=comment.message user=comment.user timestamp=comment.timestamp sortProperties=sortProperties sortAscending=sortAscending}}
 	{{/each}}
 
 </div>
