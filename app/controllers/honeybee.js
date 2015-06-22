@@ -5,6 +5,12 @@ export default Ember.Controller.extend({
 
 	isEditing: false,
 
+    todoSorting: ['idx:asc'],
+    todosort: Ember.computed.sort('model.todos.@each.idx', 'todoSorting'),
+
+
+
+
 	actions: {
 		editTitle: function() {
 			this.set('isEditing', true);

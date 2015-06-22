@@ -8,23 +8,33 @@
 
 
 		{{!task list}}
+
 			{{!#link-to "details" todo}}
 				
 					<div class="list-group-item">
 						
 						{{!task}}
-						{{input type ="checkbox" checked=todo.isCompleted}}
+						<div class="col-xs-1">
+						{{input type ="checkbox" checked=todo.isCompleted class="task-list-cb"}}
+						</div>
+						
+						<div class="col-xs-7">
 						{{#if todo.isEditing}}
 							{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
 						{{else}}
 
-							<a class="white">{{title}}</a>
+						<span class="edit_hover_class">
+							<span class="white" {{action "editTitle" on="doubleClick"}}>{{title}}</span>
 							<i class="black" {{action "editTitle"}}>{{fa-icon "pencil"}}</i>
 							<i class="black" {{action "deleteTodo" t.id}}>{{fa-icon "remove"}}</i>
+						</span>
 						{{/if}}
+						</div>
 
+						<div class="col-xs-4">
 						{{!count me in button}}
 						{{count-in store=store user=user todo=todo}}
+						</div>
 
 						{{!number of hands}}
 						{{helper-count}}

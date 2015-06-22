@@ -6,9 +6,25 @@
 				<h4 class="white">{{title}}</h4>
 				<small class="white">created by {{creator}}</small>
 
-				<br>
-				<p class="white">task details</p>
+				{{!custom url}}
+				<ul class="url">
+					<small>https://handstack.com/#/{{list.id}}/{{todo.id}}</small>
+				</ul>
 
+				<br>
+
+				{{#if isEditing}}
+					<div class="col-md-6 col-md-offset-3">
+					{{edit-title type="text" value=detail focus-out="updateDetail" insert-newline="updateDetail" placeholder="add details.."}}
+					</div>
+				{{else}}
+
+				<div class="edit_hover_class">
+				<p class="white" {{action "editDetail" on="doubleClick"}}>{{detail}}</p><i {{action "editDetail"}}>{{fa-icon "pencil" class="white"}}</i>
+				</div>
+
+
+				{{/if}}
 
 				{{!helper count}}
 				{{helper-count}}

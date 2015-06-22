@@ -281,7 +281,6 @@ top: 40px;
 
 
 .grid {
-  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -299,8 +298,6 @@ top: 40px;
   background-color: #666;
 }
 
-.grid-item--width2 { width: 350px; }
-
 
 
 /*-----task list------*/
@@ -310,6 +307,19 @@ top: 40px;
   border-color: transparent;
   border-radius: 0px;
 }
+
+
+/*--------stack details---------*/
+
+.edit_hover_class i{
+  visibility:hidden;
+}
+
+.edit_hover_class:hover i{
+  visibility:visible;
+}
+
+
 
 
 

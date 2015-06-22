@@ -13,17 +13,25 @@
 
 			{{!stack title}}
 			<div class="col-xs-12 center-block text-center">
-				<div class="inline-block">
 
 				{{#if isEditing}}
+					<div class="col-md-6 col-md-offset-3">
 					{{edit-title type="text" value=title focus-out="updateTitle" insert-newline="updateTitle"}}
+					</div>
 				{{else}}
 
-					<h4 class="white">{{title}}</h4>
-					<i {{action "editTitle"}}>{{fa-icon "pencil" class="white"}}</i>
-					<i {{action "deleteList" list.id}}>{{fa-icon "remove"}}</i>
+					<div class="edit_hover_class">
+					<h4 class="white"{{action "editTitle" on="doubleClick"}}>{{title}}</h4>
+
+					{{!edit}}
+					<span>
+						<i {{action "editTitle"}}>{{fa-icon "pencil" class="white"}}</i>
+						<i {{action "deleteList" list.id}}>{{fa-icon "remove"}}</i>
+					</span>
+				</div>
 				{{/if}}
-			</div>
+
+
 			</div>
 
 
@@ -35,7 +43,7 @@
 
 				{{!custom url}}
 				<ul class="url">
-					<small>handstack.com/todos/custom-url</small>
+					<small>https://handstack.com/#/{{list.id}}</small>
 				</ul>
 
 				{{!helper images}}

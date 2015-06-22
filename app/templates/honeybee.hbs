@@ -10,11 +10,10 @@
 		</div>
 
 <div class="sortable-list">
-		{{#each model.todos as |t|}}
-<div class="fixie">
-
+		{{#each todosort as |t|}}
+<div class="item" data-id="{{unbound t.id}}" idx="{{t.idx}}">
 			{{#link-to 'lavender' model.id t.id}}
-				{{task-list todo=t user=controllers.application.model title=t.title store=store list=model}}
+				{{task-list todo=t user=controllers.application.model title=t.title store=store list=model tlist=model.todos}}
 			{{/link-to}}
 </div>
 		{{/each}}
