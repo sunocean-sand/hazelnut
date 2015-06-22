@@ -15,7 +15,7 @@ for (var dev in ifaces) {
 
 module.exports = function(environment) {
   var ENV = {
-    firebase: 'https://radiant-torch-136.firebaseio.com/',
+    firebase: 'https://nutella.firebaseio.com/',
     modulePrefix: 'crepe',
     environment: environment,
     baseURL: '/',
