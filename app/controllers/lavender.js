@@ -2,10 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 	needs: ['application'],
-/*
+
 	commentsSorting: ['timestamp:desc'],
-	comments: Ember.computed.sort('model.@each.comment', 'commentsSorting'),
-*/
+	commentSort: Ember.computed.sort('model.comment.@each.timestamp', 'commentsSorting'),
 
 /*
 	sortedBySortByContent: function() {

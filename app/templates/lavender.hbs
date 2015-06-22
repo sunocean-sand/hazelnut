@@ -15,7 +15,7 @@
 	</div>
 
 
-	{{#each model.comment as |comment|}}
+	{{#each commentSort as |comment|}}
 		{{comment-thread message=comment.message user=comment.user timestamp=comment.timestamp}}
 	{{/each}}
 
