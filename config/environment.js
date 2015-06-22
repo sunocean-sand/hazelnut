@@ -37,7 +37,7 @@ module.exports = function(environment) {
       emulate: true,
       emberUrl: 'http://' + '127.0.0.1' + ':4200',
       liveReload: {
-        enabled: true,
+        enabled: false,
         platform: 'ios'
       }
     }

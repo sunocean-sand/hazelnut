@@ -47,7 +47,7 @@
     "sendgrid": "^1.8.0"
   },
   "dependencies": {
-    "ember-cli": "^0.2.3",
-    "ember-moment": "^1.1.1"
+    "ember-moment": "^1.1.1",
+    "broccoli-asset-rev": "~2.0.5"
   }
 }

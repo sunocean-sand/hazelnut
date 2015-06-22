@@ -17,6 +17,39 @@ export default Ember.Component.extend({
 		}
 	}.property('model.isCompleted'),
 
+
+_intializeDragsort: function(){
+        var controller = this.get('controller');
+        var list = this.get('tlist');
+
+$(".sortable-list").sortable({
+
+       update: function(event, ui) {
+        var indexes = {};
+
+        $(this).find('.item').each(function(index) {
+          indexes[$(this).data('id')] = index;
+        });
+        console.log(indexes);
+        console.log(list);
+
+      //  $(this).sortable('cancel');
+      //  controller.updateSortOrder(indexes);
+        list.forEach(function(item) {
+            var index = indexes[item.get('id')];
+            item.set('idx', index);            
+            item.save();
+        });
+
+      }
+    });
+
+//$().ready($(".sortable-list .item").sort(function (a, b){ return ($(b).data('idx')) < ($(a).data('idx')) ? -1 : 1;})
+//    .appendTo('.sortable-list')    ); 
+
+}.on('didInsertElement'),
+
+
 	
 	actions: {
 

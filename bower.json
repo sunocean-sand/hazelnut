@@ -22,7 +22,10 @@
     "imagesloaded": "~3.1.8",
     "ember-cli-moment-shim": "~0.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jquery-ui": "~1.11.4",
+    "jquery-ui-touch-punch": "*"
+  },
   "resolutions": {
     "jquery": "^1.11.1"
   }
