@@ -6,25 +6,25 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-	
-	this.modal('login-modal', {
-		withParams: 'foo',
-		otherParams: {
-			modalMessage: "message"
-		},
-		actions: {
-			changeSalutation: "changeSalutation",
-			loginFacebook: "loginFacebook",
-			loginTwitter: "loginTwitter",
-			login: "login",
-			createUser: "createUser",
-		}
+  this.modal('login-modal', {
+      withParams: 'foo',
+      otherParams: {
+          modalMessage: "message"
+      },
+      actions: {
+          changeSalutation: "changeSalutation",
+          loginFacebook: "loginFacebook",
+          loginTwitter: "loginTwitter",
+          login: "login",
+          createUser: "createUser",
+      }
 	});
 
-	this.route('main', {path: '/'});
-	this.route('honeybee', {path: '/:stack_id'});
-	this.route('lavender', {path: '/:stack_id/:task_id'});
-	this.route('manage', {path: '/:stack_id/manage'});
+  this.route('main', {path: '/'});
+  this.route('honeybee', {path: '/:stack_id'});
+  this.route('lavender', {path: '/:stack_id/:task_id'});
+  this.route('manage', {path: '/:stack_id/manage'});
 
-	this.route('profile');
+  this.route('profile');
+  this.route('create');
 });

@@ -1,0 +1,43 @@
+<article class="task-list">
+
+	<div class="row no-gutter">
+
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
+
+			{{!input type="text" value=newTodoTitle action="createTodo" placeholder="Enter a todo"}}
+
+
+		{{!task list}}
+
+			{{!#link-to "details" todo}}
+					
+						
+						{{!task}}
+						
+						<div class="col-xs-7">
+
+						<li class="list-group-item">
+						{{#if todo.isEditing}}
+							{{edit-title type="text" value=todo.model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+						{{else}}
+
+						<span class="edit_hover_class">
+							<span class="white" {{action "editTitle" on="doubleClick"}}><span class="source-code">{{title}}</span></span>
+							<i class="black" {{action "editTitle"}}>{{fa-icon "pencil"}}</i>
+							<i class="black" {{action "deleteTodo" t.id}}>{{fa-icon "remove"}}</i>
+						</span>
+						{{/if}}
+						</li>
+						
+						</div>
+
+
+					
+
+
+					{{!/link-to}}
+
+			</div>
+	</div>
+
+</article>
