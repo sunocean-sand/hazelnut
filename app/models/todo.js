@@ -5,6 +5,8 @@ export default DS.Model.extend({
 	isCompleted: DS.attr('boolean', {defaultValue: false}),
 	detail: DS.attr('string', {defaultValue: false}),
     idx:DS.attr('number', {defaultValue: false}),
+	timestamp: DS.attr('date'),
+
 	list: DS.belongsTo('list', {async: true}),
 	user: DS.belongsTo('user', {async: true}),
 	

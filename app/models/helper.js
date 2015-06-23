@@ -4,6 +4,8 @@ export default DS.Model.extend({
 	user: DS.belongsTo('user', {async: true}),
 	todo: DS.belongsTo('todo', {async: true}),
 
+    timestamp: DS.attr('date'),
+
 	helperCount: function() {
         var helperLength = this.get('user.length');
         var ret = 0;
