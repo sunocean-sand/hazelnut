@@ -2,6 +2,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<div class="container-fluid">
 
+		<div class="row">
+			<div class="pull-right">
+			{{#link-to "manage" model.id}}
+			<button class="btn-gray"> Manage People {{fa-icon "coffee"}}</button> 
+			{{/link-to}}
+			</div>
+		</div>
+
 
 		{{stack-detail list=model title=model.title creator=model.user.displayName isEditing=model.isEditing store=store}}
 

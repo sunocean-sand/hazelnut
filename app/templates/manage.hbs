@@ -10,10 +10,10 @@
 	<h4>Manage People</h4>
 
 	{{!stack title}}
-	<h4>{{title}}</h4>
+	<h4>{{model.title}}</h4>
 
 </div>
-	{{#each model.todo as |todo|}}
+	{{#each model.todos as |todo|}}
 		{{helper-list title=todo.title helper=todo.helper.user.displayName}}
 	{{/each}}
 
