@@ -313,7 +313,7 @@ top: 40px;
 
 /*------MASONRY-----------------------------------*/
 
-
+/*
 .grid {
   margin: 0 auto;
 }
@@ -331,7 +331,18 @@ top: 40px;
 .grid-item:hover {
   background-color: #666;
 }
+*/
 
+
+.panel {
+  background-color: #515151;
+  border-radius: 0px;
+  border-color: transparent;
+}
+
+.panel:hover {
+  background-color: #666;
+}
 
 
 /*-----task list------*/

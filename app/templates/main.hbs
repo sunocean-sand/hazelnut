@@ -44,18 +44,14 @@
 		<div class="row">
 			<div class="col-xs-12">
 
-  		{{#masonry-grid}}
-
 		{{#each model as |list|}}
 			{{#link-to 'honeybee' list}}
 			{{stack-list title=list.title displayName=list.user.displayName}}
 			{{/link-to}}
 		{{/each}}
-
-		{{/masonry-grid}}
+				</div>
 			</div>
 
-		</div>
 
 
 
