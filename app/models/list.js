@@ -7,5 +7,7 @@ export default DS.Model.extend({
 	timestamp: DS.attr('date'),
 
 	todos: DS.hasMany('todo', {async: true}),
-	user: DS.belongsTo('user', {async: true})
+	user: DS.belongsTo('user', {async: true}),
+
+	unprocessed: DS.attr('boolean', {defaultValue: true})
 });

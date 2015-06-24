@@ -11,4 +11,6 @@ export default DS.Model.extend({
 	comment: DS.hasMany('comment', {async: true}),
 
 	helper: DS.hasMany('helper', {async: true}),
+
+	unprocessed: DS.attr('boolean', {defaultValue: true})
 });

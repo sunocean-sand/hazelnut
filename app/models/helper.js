@@ -13,5 +13,7 @@ export default DS.Model.extend({
             ret += spread.get('helper.length');
         });
         return ret;
-    }.property('user.@each.helper.length')
+    }.property('user.@each.helper.length'),
+
+    unprocessed: DS.attr('boolean', {defaultValue: true})
 });
