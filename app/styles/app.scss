@@ -50,6 +50,11 @@ small {
 .navbar .nav > li > a {
   color:  #fff;
 }
+
+.navbar .nav > li:hover {
+  color: transparent;
+}
+
 .navbar .nav > li > a:hover {
   color:  #FF3399;
 }
