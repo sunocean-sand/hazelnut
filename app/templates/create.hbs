@@ -5,8 +5,8 @@
 
 {{!save or cancel}}
 <div class="row">
-	<span class="pull-left"><button>X</button></span>
-	<span class="pull-right"><button {{action "createStack"}}>Save</button></span>
+	<span class="pull-left">{{#link-to 'main'}}<button class="btn-gray source-code">X</button>{{/link-to}}</span>
+	<span class="pull-right"><button class="btn-gray source-code" {{action "createStack"}}>Save</button></span>
 </div>
 
 
@@ -26,8 +26,12 @@
 
 
 <div class="col-xs-12 col-md-6 col-md-offset-3">
-
+	<div class="col-xs-10">
 		{{input type="text" value=model.todos.title action="addTodo" placeholder="Enter a todo"}}
+	</div>
+	<div class="col-xs-2">
+		<button class="btn-pink" {{action "addTodo"}}>+</button>
+	</div>
 </div>
 
 

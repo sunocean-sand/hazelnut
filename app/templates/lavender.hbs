@@ -4,13 +4,20 @@
 	{{task-detail store=store title=model.title creator=model.user.displayName todo=model user=controllers.application.model helpers=model.helper.user.displayName isEditing=model.isEditing detail=model.detail list=model.list}}
 
 
-	<div class="row center-block form-inline">
-		<div class="commenterImage">
-			<img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle">
-		</div>
-		<div class="commentText">
-			{{!creating comment}}
-			{{textarea type="text" value=newComment action="createComment" placeholder="say something.." autoresize=true}}
+	<div class="row center-block">
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
+			<div class="col-xs-2 col-md-2">
+			<div class="commenterImage">
+				<img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle">
+			</div>
+			</div>
+				<div class="commentText">
+				<div class="col-xs-10 col-md-10">
+					{{!creating comment}}
+					{{textarea type="text" value=newComment action="createComment" placeholder="say something.." autoresize=true}}
+				</div>
+				</div>
+			<button class="btn-gray pull-right" {{action "createComment"}}>{{fa-icon "arrow-right"}}</button>
 		</div>
 	</div>
 
