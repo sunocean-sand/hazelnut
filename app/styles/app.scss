@@ -62,6 +62,18 @@ small {
 
 .navbar li { color: #000 }
 
+.navbar-header .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
 #application .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -93,6 +105,10 @@ small {
 
 .pink-background {
   background-color: #FF3399;
+}
+
+.black-background {
+  background-color: #000;
 }
 
 .no-gutter {
