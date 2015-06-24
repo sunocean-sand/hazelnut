@@ -22,6 +22,7 @@ export default Ember.Component.extend({
 				var helper = store.createRecord('helper', {
 					user: user,
 					todo: todo,
+					timestamp: new Date()
 				});
 
 				helper.save().then(function(helper) {

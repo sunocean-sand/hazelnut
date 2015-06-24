@@ -1,8 +1,14 @@
 import Ember from 'ember';
+//import ResetScroll from '../mixins/reset-scroll/';
 
 
+export default Ember.Route.extend(/*ResetScroll,*/ {
+/*
+	activate: function() {
+		this._super.apply(this, arguments);
+	},
+	*/
 
-export default Ember.Route.extend({
 	model: function(params) {
 		return this.store.find('list', params.stack_id);
 	},
@@ -31,6 +37,7 @@ export default Ember.Route.extend({
 					title: newTodoTitle,
 					list: list,
 					user: user,
+					timestamp: new Date()
 				});
 
 				this.controllerFor(this.routeName).set('newTodoTitle', '');

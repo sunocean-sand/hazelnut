@@ -21,6 +21,7 @@ export default Ember.Route.extend({
 				var list = this.store.createRecord('list', {
 					title: newListTitle,
 					user: user,
+					timestamp: new Date()
 				});
 
 			//3
