@@ -7,23 +7,33 @@ export default Ember.Component.extend({
 		//unable to get user picture
 		countMe: function() {
 
-			var user= this.get('user');
+			//authentication
 
-			var todo= this.get('todo');
+			var session = this.get('session');
 
-			var store = this.get('store');
+			if (session.isAuthenticated) {
 
-			var helper = store.createRecord('helper', {
-				user: user,
-				todo: todo,
-			});
+				var user= this.get('user');
 
-			helper.save().then(function(helper) {
-				user.get('helper').addObject(helper);
-				user.save();
-				todo.get('helper').addObject(helper);
-				todo.save();
-			});
+				var todo= this.get('todo');
+
+				var store = this.get('store');
+
+				var helper = store.createRecord('helper', {
+					user: user,
+					todo: todo,
+				});
+
+				helper.save().then(function(helper) {
+					user.get('helper').addObject(helper);
+					user.save();
+					todo.get('helper').addObject(helper);
+					todo.save();
+				});
+
+			} else {
+				this.transitionTo({queryParams: {foo: true}});
+			}
 
 		},
 	}

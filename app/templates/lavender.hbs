@@ -8,14 +8,14 @@
 		<div class="col-xs-12 col-md-8 col-md-offset-2">
 			
 			{{#if session.isAuthenticated}}
-			<div class="col-xs-2 col-md-2">
+			<div class="col-xs-3 col-md-2">
 				<div class="commenterImage">
 					<img src={{session.user.imageThumbUrl}} height="50" width="50" class="img-circle">
 				</div>
 			</div>
 			{{/if}}
 				<div class="commentText">
-				<div class="col-xs-10 col-md-10">
+				<div class="col-xs-9 col-md-10">
 					{{!creating comment}}
 					{{textarea type="text" value=newComment action="createComment" placeholder="say something.." autoresize=true}}
 				</div>

@@ -241,6 +241,7 @@ export default {
 		app.register("session:main", session);
 		app.inject("controller", "session", "session:main");
 		app.inject("route", "session", "session:main");
+		app.inject("component", "session", "session:main");
 	}
 };
 
