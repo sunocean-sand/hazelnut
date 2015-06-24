@@ -48,5 +48,15 @@ export default Ember.Route.extend({
 			}
 
 		},
+
+
+
+		openModal: function() {
+			console.log('transition');
+			this.transitionTo({queryParams: {foo: true}});
+
+		}
+
+
 	}
 });

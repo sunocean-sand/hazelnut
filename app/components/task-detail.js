@@ -23,6 +23,14 @@ export default Ember.Component.extend({
 				this.set('isEditing', false);
 			}
 		},
+
+
+		openModal: function() {
+			var _this=this;
+
+			_this.sendAction('openModal');
+		},
+		
 	}
 	
 });

@@ -33,7 +33,11 @@ export default Ember.Component.extend({
 				});
 
 			} else {
-				this.transitionTo({queryParams: {foo: true}});
+
+				var _this=this;
+
+				_this.sendAction('openModal');
+
 			}
 
 		},
