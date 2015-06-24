@@ -16,6 +16,11 @@ export default Ember.Route.extend({
 
 		createStack: function() {
 
+			//check for authentication
+			var session = this.get('session');
+
+			if (session.isAuthenticated) {
+
 			//list saving with todos
 			var user = this.controllerFor('application').get('model');
 
@@ -35,10 +40,17 @@ export default Ember.Route.extend({
 				user.get('list').addObject(list);
 				user.save().then(function(success){
 					console.log('success', success);
-						_this.transitionTo('honeybee', list.id);
+						_this.transitionTo('honeybee', list);
 					}, function(fail){
 					  console.log('fail', fail);
 					});
+
+
+
+			} else {
+				//open login modal
+				this.transitionTo({queryParams: {foo: true}});
+			}
 		},
 
 
