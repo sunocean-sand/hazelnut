@@ -13,8 +13,9 @@ export default Ember.Component.extend({
 			
 			list.destroyRecord();
 
+			var _this=this;
 			//this.transitionTo('main');
-			this.sendAction('go');
+			_this.sendAction('go');
 		},
 
 		updateTitle: function() {

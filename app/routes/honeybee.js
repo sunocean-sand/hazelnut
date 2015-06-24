@@ -63,10 +63,21 @@ export default Ember.Route.extend(/*ResetScroll,*/ {
 
 		},
 
+		
+
 		go: function() {
 			console.log('transition');
 			this.transitionTo('main');
+		},
+
+
+
+		openModal: function() {
+			console.log('transition');
+			this.transitionTo({queryParams: {foo: true}});
 		}
+
+
 
 	}
 });

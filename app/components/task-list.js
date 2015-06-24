@@ -73,5 +73,14 @@ $(".sortable-list").sortable({
 		editTitle: function() {
 			this.set('isEditing', true);
 		},
+
+
+
+		openModal: function() {
+			var _this=this;
+
+			_this.sendAction('openModal');
+		},
+
 	},
 });
