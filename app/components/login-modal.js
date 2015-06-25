@@ -6,7 +6,7 @@ export default Ember.Component.extend({
 
 	actions: {
 
-		dismiss: function() {
+		close: function() {
     		this.sendAction('dismiss');
     	},
 
