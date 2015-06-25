@@ -60,6 +60,20 @@
           <li>{{#link-to 'profile'}}{{session.user.displayName}}{{/link-to}}</li>
           <li {{action 'logout'}}><a>logout</a></li>
 
+
+
+        {{else}}
+
+
+
+        <li>
+          {{#link-to (query-params foo="yes")}}
+          <span class="white">{{fa-icon "user"}}</span>
+          {{/link-to}}
+        </li>
+
+
+
         {{/if}}
 
 
