@@ -5,7 +5,10 @@ export default Ember.Route.extend({
 		return this.store.find('list');
 	},
 
+/*
 	actions: {
+
+		
 		createList: function() {
 		//0 check authentication
 			var session = this.get('session');
@@ -50,5 +53,5 @@ export default Ember.Route.extend({
 			
  
 		}
-	}
+	}*/
 });
