@@ -14,8 +14,10 @@
 
 </div>
 	{{#each model.todos as |todo|}}
-		{{helper-list title=todo.title helper=todo.helper.user.displayName}}
+		{{helper-list todo=todo title=todo.title helper=todo.helper.user.displayName}}
 	{{/each}}
+
+	{{model.todos.helpers.users.displayName}}
 
 </div>
 

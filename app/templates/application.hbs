@@ -4,7 +4,10 @@
 
       <div class="navbar-header">
 
-      <span class="navbar-toggle collapsed btn-gray" data-toggle="collapse" data-target="#navbar-collapse-1">
+      <span class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+
+
+
         {{#if session.isAuthenticated}}
 
         
@@ -21,13 +24,15 @@
 
         <li>
           {{#link-to (query-params foo="yes")}}
-          {{fa-icon "user"}}
+          <span class="white">{{fa-icon "user"}}</span>
           {{/link-to}}
         </li>
 
 
 
         {{/if}}
+
+
       </span>
 
 
@@ -52,24 +57,13 @@
 
         {{#if session.isAuthenticated}}
 
-        
           <li>{{#link-to 'profile'}}{{session.user.displayName}}{{/link-to}}</li>
           <li {{action 'logout'}}><a>logout</a></li>
 
-
-        {{else}}
-
-
-
-        <li>
-          {{#link-to (query-params foo="yes")}}
-          {{fa-icon "user"}}
-          {{/link-to}}
-        </li>
-
-
-
         {{/if}}
+
+
+
       </ul>
     
     </div>

@@ -161,10 +161,10 @@ button:focus, button:active, button:active:focus {
 
 /* LOG IN MODAL -------------------------------*/
 
+
 .modal {
   position: relative;
   margin: 10px auto;
-  width: 400px;
   background-color: #fff;
   padding: 1em;
 }
@@ -196,6 +196,14 @@ button:focus, button:active, button:active:focus {
 .nav-tabs {
     text-align:center;
 }
+
+.tab-pane {
+  overflow: hidden;
+}
+
+
+
+
 
 
 
@@ -377,12 +385,22 @@ top: 40px;
   border-color: transparent;
   border-radius: 0px;
   padding-bottom: 0.3em;
+  position: relative;
+  z-index: 2;
 }
 
 
 .sortable-list .item{
 margin-bottom:1em;
 }
+
+
+.count-button {
+  z-index:3;
+  position: relative;
+}
+
+
 
 
 /*--------stack details---------*/

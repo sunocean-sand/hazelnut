@@ -8,14 +8,14 @@ export default Ember.Controller.extend({
     todoSorting: ['idx:asc'],
     todosort: Ember.computed.sort('model.todos.@each.idx', 'todoSorting'),
 
-updateSortOrder: function(indexes) {
-    this.beginPropertyChanges();
-    this.todos.forEach(function(item) {
-      var index = indexes[item.get('id')];
-      item.set('idx', index);
-    }, this);
-    this.endPropertyChanges();
-  },
+	updateSortOrder: function(indexes) {
+	    this.beginPropertyChanges();
+	    this.todos.forEach(function(item) {
+	      var index = indexes[item.get('id')];
+	      item.set('idx', index);
+	    }, this);
+	    this.endPropertyChanges();
+	  },
 
 
 	actions: {

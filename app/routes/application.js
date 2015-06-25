@@ -25,7 +25,9 @@ export default Ember.Route.extend({
 				controller.get("session").loginFacebook().then(function(user) {
 					console.log(user);
 				});
-			this.send('dismiss');
+
+			var _this=this;
+			_this.sendAction('dismiss');
 		},
 
 		loginTwitter: function() {
@@ -33,7 +35,9 @@ export default Ember.Route.extend({
 				controller.get("session").loginTwitter().then(function(user) {
 					console.log(user);
 				});
-			this.send('dismiss');
+
+			var _this = this;
+			_this.sendAction('dismiss');
 		},
 
 
@@ -42,7 +46,7 @@ export default Ember.Route.extend({
 		},
 
 		dismiss: function() {
-    		this.sendAction('dismiss');
+    		this.send('dismiss');
     	},
 
 		createUser: function() {
