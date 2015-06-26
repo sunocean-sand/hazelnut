@@ -84,9 +84,9 @@ export default Ember.Route.extend({
           var userObj = {
             id: uuid,
             provider: user.provider,
-            displayName: user.twitter.name,
-            imageThumbUrl: user.twitter.profile_image_url,
-            location: user.twitter.location,
+            displayName: user.twitter.cachedUserProfile.name,
+            imageThumbUrl: user.twitter.cachedUserProfile.profile_image_url,
+            location: user.twitter.cachedUserProfile.location,
             timestamp: new Date()
           };
 
