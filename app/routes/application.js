@@ -3,19 +3,17 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-/*
+
 	model: function() {
 		var user = this.get('session.user');
 		//returns everyones info
-
 		return this.store.find('user');
-
 		var session = this.get('session');
 		
 		console.log(session.uid);
 		//returns the actually logged in uid with provider name
 
-		//this.get("session").then(function(user) {
+		this.get("session").then(function(user) {
 
 		if (user) {
 			return this.store.find('user', session.uid);
@@ -24,7 +22,7 @@ export default Ember.Route.extend({
 			return null;
 		}
 	},
-*/
+
 
 	actions: {
 

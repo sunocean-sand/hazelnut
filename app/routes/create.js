@@ -32,6 +32,7 @@ export default Ember.Route.extend({
 
 			var list = this.get('controller.model');
 
+/*
 			var listRef = ref.child('lists');
 
 				listRef.child(list.id).child('todos').once('value', function(allTodosSnapshot) {
@@ -43,10 +44,19 @@ export default Ember.Route.extend({
 						console.log(childData.title);
 					});
 				});
+*/
 
+			var userCallback = function() {
 
+				ref.child('lists').child(list.id).child(uid).push({
+					user: uid
+				});
 
-/*
+			}
+
+			var user = this.get('session.user');
+			console.log(this.get('session.user'));
+
 
 			list.save().then(function(list) {
 				  list.get('todos').then(function(todos){
@@ -56,18 +66,19 @@ export default Ember.Route.extend({
 				  });
 				});
 
-
-			ref.child('lists').push({
-				todo: this.get('controller.model.todo')
-			});
+			user.get('lists').addObject(list);
+			user.save();
 
 
-			ref.child('lists').child(list.id).push({
-				user: uid
-			});
 
-*/
+				ref.child('lists').child(list.id).push({
+					user: uid
+				});
+
+
+
 			var _this=this;	
+
 			_this.transitionTo('honeybee', list);
 
 
