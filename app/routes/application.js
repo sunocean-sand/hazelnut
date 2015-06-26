@@ -80,7 +80,7 @@ export default Ember.Route.extend({
 				controller.get("session").loginTwitter().then(function(user) {
           var generator = controller.get("createUUID");
           var uuid = generator();
-
+          console.log(user);
           var userObj = {
             id: uuid,
             provider: user.provider,

@@ -25,8 +25,10 @@ export default Ember.Route.extend({
 			var todo = this.get('controller.model.todo');
 
 
-			var user = this.get('session.oauthUser');
-			console.log(user);
+			var oauthUser = this.get('session.oauthUser');
+			console.log(oauthUser);
+
+			
 
 
 
@@ -59,8 +61,12 @@ export default Ember.Route.extend({
 				  });
 				});
 
-				user.get('list').addObject(list);
-				user.save();
+
+			var userInstance = this.store.get('users', oauthUser).then(function() {
+					userInstance.get('list').addObject(list);
+					userInstance.save();
+			});
+
 
 
 
