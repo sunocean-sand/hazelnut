@@ -25,6 +25,12 @@ export default Ember.Route.extend({
 			var todo = this.get('controller.model.todo');
 
 
+			var user = this.get('session.oauthUser');
+			console.log(user);
+
+
+
+
 			if (session.isAuthenticated) {
 
 			//list saving with todos
@@ -45,9 +51,6 @@ export default Ember.Route.extend({
 				});
 
 
-
-/*
-
 			list.save().then(function(list) {
 				  list.get('todos').then(function(todos){
 				  	todos.forEach(function(todo){
@@ -55,6 +58,12 @@ export default Ember.Route.extend({
 				  	});
 				  });
 				});
+
+				user.get('list').addObject(list);
+				user.save();
+
+
+
 
 
 			ref.child('lists').push({
@@ -66,7 +75,7 @@ export default Ember.Route.extend({
 				user: uid
 			});
 
-*/
+
 			var _this=this;	
 			_this.transitionTo('honeybee', list);
 
