@@ -17,14 +17,13 @@ export default Router.map(function() {
           loginTwitter: "loginTwitter",
           login: "login",
           createUser: "createUser",
-          dismiss: "dismiss"
       }
 	});
 
   this.route('main', {path: '/'});
-  this.route('honeybee', {path: '/:stack_id'});
-  this.route('lavender', {path: '/:stack_id/:task_id'});
-  this.route('manage', {path: '/:stack_id/manage'});
+  this.route('honeybee', {path: '/:list_id'});
+  this.route('lavender', {path: '/:list_id/:todo_id'});
+  this.route('manage', {path: '/:list_id/manage'});
 
   this.route('profile');
   this.route('create');
