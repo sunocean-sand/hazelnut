@@ -3,7 +3,7 @@
 
 			<div class="row center-block text-center">
 				<br>
-				<h4 class="white">{{title}}</h4>
+				<h4 class="white">{{linkify title}}</h4>
 				<small class="white">created by {{creator}}</small>
 
 				{{!custom url}}
@@ -20,7 +20,7 @@
 				{{else}}
 
 				<div class="edit_hover_class">
-				<p class="white" {{action "editDetail" on="doubleClick"}}>{{detail}}</p><i {{action "editDetail"}}>{{fa-icon "pencil" class="white"}}</i>
+				<p class="white" {{action "editDetail" on="doubleClick"}}>{{linkify detail}}</p><i {{action "editDetail"}}>{{fa-icon "pencil" class="white"}}</i>
 				</div>
 
 
