@@ -15,6 +15,7 @@ function parseAuthData(authData) {
 			parsedData.language = authData.facebook.cachedUserProfile.locale;
 			parsedData.imageThumbUrl = authData.facebook.cachedUserProfile.picture.data.url;
 			parsedData.website = authData.facebook.cachedUserProfile.link;
+			parsedData.email = authData.facebook.email;
 			return parsedData;
 /*
 		case 'google':
@@ -57,14 +58,6 @@ var session = Ember.Object.extend({
 				session.set('uid', authData.uid);
 				session.set('user', user);
 				ref.child('users').child(authData.uid).set(user);
-				
-				/*
-				var user = this.store.createRecord('user', {
-					id: authData.uid,
-					name: authData.provider.displayName,
-				});
-				user.save();
-				*/
 
 			} else {
 				session.set("isAuthenticated", false);
@@ -122,109 +115,6 @@ var session = Ember.Object.extend({
 	},
 
 
-/*
-	createUser: function() {
-        var session = this;
-
-        var properties = {
-        	name: this.get('name'),
-        	email: this.get('email'),
-        	password: this.get('password')
-        };
-
-        this.get('ref').createUser(properties, function(error, user) {
-            if (!error) {
-                console.log('User name: ' + user.name + ', Email: ' + user.email);
-                var userRef = new Firebase(usersPath + '/simplelogin:' + user.id);
-                userRef.set({email: user.email}); // This is where you'd add Display Name, phone #, whatever
-
-                session.login('password', email, password);
-            }
-        });
-    },
-*/
-
-
-/*
-	createUser: function() {
-		var session = this;
-
-		return new Ember.RSVP.Promise(function(resolve, reject) {
-			session.createUser({
-				name: name,
-				email: e,
-				password: p
-			}, function(error) {
-					if	(userData) {
-						resolve();
-						alert("user created");
-					} else {
-						reject(error);
-						alert("Error creating user");
-					}
-				});
-		});
-	},
-*/
-
-/*					if (error) {
-						reject(error);
-						alert("there is an error");
-					}
-					if (user) {
-						var newUser = session.store.createRecord('user', {
-							name: user.name,
-							email: user.email
-						});
-
-						var appUser = newUser.save().then(function(value) {
-							session.set('currentUser', value);
-							return value;
-						});
-
-						resolve(appUser);
-						alert("appUser has been saved");
-					}
-				});
-			});
-
-			session.get('ref').createUser(email, password, function (error, user) {
-					if (error) {
-						reject(error);
-					}
-					if (user) {
-						session.get('ref').login('password', {email: email, password: password});
-					}
-				});
-
-		return Promise;
-	},
-*/
-
-
-/*
-						(error === null) {
-						resolve(userData.uid);
-						session.set("isNewUser", true);
-						alert("user created");
-					} else {
-						reject(error);
-						alert("Error creating user");
-					}
-				});
-		});
-	},
-	 /*
-	 createUser: function() {
-        var email = "jess@handstack.com";//createEmail.value;
-        var password = "rain";//createPassword.value;
-        this.authClient.createUser(email, password, function(error, user) {
-            if (!error) {
-                console.log('User Id: ' + user.id + ', Email: ' + user.email);
-            }
-        }
-    )},*/
-
 
 	logout: function() {
 		this.get("ref").unauth();
@@ -234,11 +124,7 @@ var session = Ember.Object.extend({
 	currentUser: Ember.computed('isAuthenticated', function() {
 		return this.get('ref').getAuth();
 	})
-	/*
-	currentUser: function() {
-		return this.get("ref").getAuth();
-	}.property("isAuthenticated")
-	*/
+
 });
 
 
