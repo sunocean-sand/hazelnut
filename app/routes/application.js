@@ -2,6 +2,15 @@ import Ember from 'ember';
 
 
 export default Ember.Route.extend({
+  createUUID: function guid() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+  },
 
 /*
 	model: function() {
@@ -11,7 +20,7 @@ export default Ember.Route.extend({
 		return this.store.find('user');
 
 		var session = this.get('session');
-		
+
 		console.log(session.uid);
 		//returns the actually logged in uid with provider name
 
@@ -19,6 +28,7 @@ export default Ember.Route.extend({
 
 		if (user) {
 			return this.store.find('user', session.uid);
+
 		} else  {
 			return null;
 		}
@@ -26,6 +36,7 @@ export default Ember.Route.extend({
 */
 
 	actions: {
+
 
 		login: function() {
 			var controller = this;
@@ -35,7 +46,28 @@ export default Ember.Route.extend({
 		loginFacebook: function() {
 			var controller = this;
 				controller.get("session").loginFacebook().then(function(user) {
-					console.log(user);
+          var generator = controller.get("createUUID");
+          var uuid = generator();
+
+          var userObj = {
+            id: uuid,
+            provider: user.provider,
+            displayName: user.facebook.displayName,
+            email: user.facebook.email,
+            imageThumbUrl: user.facebook.cachedUserProfile.picture.data.url,
+            location: user.facebook.cachedUserProfile.locale,
+            timestamp: new Date()
+          };
+
+          controller.set("session.oauthUser", userObj);
+
+          var u1 = controller.store.createRecord('user', userObj);
+
+          u1.save();
+
+
+          window.history.back();
+
 				});
 
 			var _this=this;
@@ -48,14 +80,17 @@ export default Ember.Route.extend({
 					console.log(user);
 					console.log(user.uid);
 
-					var user = controller.store.createRecord('user', {
-					id: user.uid,
-					timestamp: new Date()
-					});
+					controller.store.createRecord('user', {
+					  id: user.uid,
+					  timestamp: new Date()
+					}).save();
+          window.history.back();
+
 				});
 
 			var _this = this;
 			_this.sendAction('dismiss');
+
 		},
 
 

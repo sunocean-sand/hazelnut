@@ -28,7 +28,7 @@ $(".sortable-list").sortable({
         $(this).find('.item').each(function(index) {
           indexes[$(this).data('id')] = index;
         });
-        controller.updateSortOrder(indexes);
+//        controller.updateSortOrder(indexes);
       }
     });
 

@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
 
 	isEditing: false,
 
-    todoSorting: ['idx:asc'],
+    todoSorting: ['timestamp:desc'],
     todosort: Ember.computed.sort('model.todos.@each.idx', 'todoSorting'),
 
 	updateSortOrder: function(indexes) {
