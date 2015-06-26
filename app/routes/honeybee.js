@@ -3,11 +3,12 @@ import Ember from 'ember';
 
 
 export default Ember.Route.extend(/*ResetScroll,*/ {
-/*
+
 	activate: function() {
-		this._super.apply(this, arguments);
+		this._super();
+        window.scrollTo(0,0);
 	},
-	*/
+
 
 	model: function(params) {
 		return this.store.find('list', params.list_id);
@@ -72,8 +73,17 @@ export default Ember.Route.extend(/*ResetScroll,*/ {
 
 
 
+             var flog = this.store.createRecord('log', {
+                event: "createTodo",
+                detail: newTodoTitle,
+                path: this.controllerFor("application").get("currentPath"),
+                user: uid,
+                jsondata: "{}",
+                timestamp: new Date()
+            }); flog.save();
 
-				var newTodoRef = todoRef.push({
+
+			var newTodoRef = todoRef.push({
 					title: newTodoTitle,
 					timestamp: Firebase.ServerValue.TIMESTAMP,
 					user: uid,

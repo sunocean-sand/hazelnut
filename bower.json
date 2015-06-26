@@ -1,5 +1,5 @@
 {
-  "name": "nutella",
+  "name": "radiant-torch-136",
   "dependencies": {
     "ember": "1.11.1",
     "ember-cli-shims": "ember-cli/ember-cli-shims#0.0.3",
@@ -20,7 +20,8 @@
     "masonry": "~3.3.0",
     "jquery-masonry": "~3.3.0",
     "imagesloaded": "~3.1.8",
-    "ember-cli-moment-shim": "~0.2.0"
+    "ember-cli-moment-shim": "~0.2.0",
+    "hammerjs": "~2.0.4"
   },
   "devDependencies": {
     "jquery-ui": "~1.11.4",

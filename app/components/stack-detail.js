@@ -11,7 +11,21 @@ export default Ember.Component.extend({
 			var store = this.get('store');
 			var list = this.get('list');
 			
+             var flog = this.store.createRecord('log', {
+                event: "deleteList",
+                detail: list.get('title'),
+                user: this.get('session').uid,             
+                jsondata: JSON.stringify(list),
+                timestamp: new Date(),
+
+            }); flog.save();
+
+
+
 			list.destroyRecord();
+
+            
+
 
 			var _this=this;
 			//this.transitionTo('main');

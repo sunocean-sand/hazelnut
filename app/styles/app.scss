@@ -228,7 +228,18 @@ textarea{
 .btn-pink {
   background-color: #FF3399;
   border-color: #FF3399;
+
 }
+
+.btn-addtodo{
+    font-size:2em;
+    height: 2.3rem;
+}
+.btn-addtodo .pushup{
+position:relative;
+top:-.45em;
+}
+
 .btn-pink:hover {
   background-color: #ff66b3;
   border-color: #ff66b3;
@@ -380,6 +391,21 @@ top: 40px;
 
 /*-----task list------*/
 
+
+.sortable-list .item{
+width:
+
+}
+
+
+
+
+.todo-material{
+
+
+
+}
+
 .list-group-item {
   background: #515151;
   border-color: transparent;
@@ -388,6 +414,8 @@ top: 40px;
   position: relative;
   z-index: 2;
 }
+
+
 
 
 .sortable-list .item{
