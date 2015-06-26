@@ -19,15 +19,26 @@ export default Ember.Route.extend({
 			//check for authentication
 			var session = this.get('session');
 
+			var ref = this.get('session.ref');
+			var uid = this.get('session.uid');
+
+			var todo = this.get('controller.model.todo');
+
+
 			if (session.isAuthenticated) {
 
 			//list saving with todos
-			var user = this.controllerFor('application').get('model');
+			//var user = this.controllerFor('application').get('model');
 
 			var list = this.get('controller.model');
 
-				list.save().then(function(list) {
 
+
+			list.save().then(function(list) {
+
+				//ref.child('lists').push({
+				//	user: uid
+				//});
 				  list.get('todos').then(function(todos){
 				  	todos.forEach(function(todo){
 				  		todo.save();
@@ -35,15 +46,19 @@ export default Ember.Route.extend({
 				  });
 				});
 
-			var _this=this;
 
-				user.get('list').addObject(list);
-				user.save().then(function(success){
-					console.log('success', success);
-						_this.transitionTo('honeybee', list);
-					}, function(fail){
-					  console.log('fail', fail);
-					});
+			ref.child('lists').push({
+				todo: this.get('controller.model.todo')
+			});
+
+
+			ref.child('lists').child(list.id).push({
+				user: uid
+			});
+
+
+			var _this=this;	
+			_this.transitionTo('honeybee', list);
 
 
 

@@ -11,14 +11,24 @@ export default Ember.Component.extend({
 
 			var session = this.get('session');
 
-			if (session.isAuthenticated) {
+			var ref = this.get('session.ref');
+			var uid = this.get('session.uid');
+			
 
-				var user= this.get('user');
+			if (session.isAuthenticated) {
 
 				var todo= this.get('todo');
 
 				var store = this.get('store');
 
+				ref.child('helpers').push({
+					todo: todo.id,
+					timestamp: Firebase.ServerValue.TIMESTAMP,
+					user: uid,
+					unprocessed: true
+				});
+
+/*
 				var helper = store.createRecord('helper', {
 					user: user,
 					todo: todo,
@@ -31,6 +41,7 @@ export default Ember.Component.extend({
 					todo.get('helper').addObject(helper);
 					todo.save();
 				});
+*/
 
 			} else {
 

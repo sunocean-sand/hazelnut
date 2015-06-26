@@ -10,38 +10,101 @@ export default Ember.Route.extend(/*ResetScroll,*/ {
 	*/
 
 	model: function(params) {
-		return this.store.find('list', params.stack_id);
+		return this.store.find('list', params.list_id);
 	},
 
 	actions: {
 
 		createTodo: function() {
 
+			//just some examples to see what is defined
 			var session = this.get('session');
+			var currentUser = this.get('session.currentUser');
+
+			console.log(session.uid); //provider:id
+			console.log(session.user); //object with all the info
+			console.log(session.ref); //firebase
+			console.log(this.get('session').uid);
+			console.log(currentUser.uid);
+			//return this.store.find('user', this.get('session').uid);//provider:id
+
+			var ref = this.get('session.ref');// need it
+			var uid = this.get('session.uid');// need it
+
+			console.log(ref.child('users').child(uid).child('todos'));
+			console.log(ref.child('users').child(uid));
+
+
 
 			if (session.isAuthenticated) {
 
 
 				var newTodoTitle = this.controllerFor(this.routeName).get('newTodoTitle');
-				var user = this.controllerFor('application').get('model');
-
-				//console.log(this);
-
-				//Ember.Logger.info('user:', user);
 
 				if (Ember.isBlank(newTodoTitle)) {return false;}
 
 				var list = this.modelFor(this.routeName);
 
+/*
 				var todo = this.store.createRecord('todo', {
 					title: newTodoTitle,
 					list: list,
-					user: user,
+					user: session.currentUser.uid,
 					timestamp: new Date()
 				});
+*/
+				var _this=this;
+
+				var todoRef = ref.child('todos');
+
+				var todoCallback = function() {
+
+					var todoID = newTodoRef.key();
+					console.log(todoID);
+
+					var listRef = ref.child('lists').child(list.id).child('todos');
+
+					listRef.update({
+						todo: todoID
+					});
+
+				}
+
+
+
+
+				var newTodoRef = todoRef.push({
+					title: newTodoTitle,
+					timestamp: Firebase.ServerValue.TIMESTAMP,
+					user: uid,
+					list: list.id,
+					unprocessed: true,
+					isCompleted: false,
+					idx: 0,
+
+				}, function(error) {
+
+				todoCallback();
+				console.log(error);
+
+			 	});
+
+
+
+
+				/*
+				var todoID = todoRef.key();
+				
+				var listRef = ref.child('lists').child(list.id).child(todos);
+
+					listRef.push({
+						todo: todoID
+					});
+*/
+			
 
 				this.controllerFor(this.routeName).set('newTodoTitle', '');
-
+/*
 				var _this=this;
 
 				todo.save().then(function(todo) {
@@ -55,7 +118,7 @@ export default Ember.Route.extend(/*ResetScroll,*/ {
 						console.log('fail', fail);
 					});
 				});
-
+*/
 
 			} else {
 				this.transitionTo({queryParams: {foo: true}});

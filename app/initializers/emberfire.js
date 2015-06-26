@@ -95,8 +95,16 @@ var session = Ember.Object.extend({
 			var session = this;
 			return new Ember.RSVP.Promise(function(resolve, reject) {
 				session.get('ref').authWithOAuthPopup('twitter', function(error, user) {
-					if (user) { resolve(user); }
-					else { reject(error); }
+					if (user) {
+						resolve(user); 
+					} else {
+						reject(error);
+					}
+				},
+
+				{
+					remember: "sessionOnly",
+					scope: "email"
 				});
 			});
 	},
