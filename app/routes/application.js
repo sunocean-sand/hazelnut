@@ -3,15 +3,27 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
+/*
 	model: function() {
-		var user = this.get('session.uid');
+		var user = this.get('session.user');
+		//returns everyones info
+
+		return this.store.find('user');
+
+		var session = this.get('session');
+		
+		console.log(session.uid);
+		//returns the actually logged in uid with provider name
+
+		//this.get("session").then(function(user) {
+
 		if (user) {
-			return this.store.find('user', user);
+			return this.store.find('user', session.uid);
 		} else  {
 			return null;
 		}
 	},
-
+*/
 
 	actions: {
 
@@ -34,6 +46,12 @@ export default Ember.Route.extend({
 			var controller = this;
 				controller.get("session").loginTwitter().then(function(user) {
 					console.log(user);
+					console.log(user.uid);
+
+					var user = controller.store.createRecord('user', {
+					id: user.uid,
+					timestamp: new Date()
+					});
 				});
 
 			var _this = this;
@@ -44,6 +62,7 @@ export default Ember.Route.extend({
 		logout: function() {
 			this.get('session').logout();
 		},
+
 
 		dismiss: function() {
     		this.send('dismiss');

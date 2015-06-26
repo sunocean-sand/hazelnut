@@ -13,6 +13,7 @@ export default Ember.Controller.extend({
 
 	    addTodo: function() {
 
+
 	    	var user = this.controllerFor('application').get('model');
 
 	    	var todo = this.store.createRecord('todo', {
@@ -22,7 +23,17 @@ export default Ember.Controller.extend({
 	    	
 	    	var list = this.get('model');
 	  
-	    	list.get('todos').pushObject(todo);              
+	    	list.get('todos').pushObject(todo);  
+
+
+/*
+	    	var session = this.get('session');
+
+			var ref = this.get('session.ref');
+			var uid = this.get('session.uid');
+*/
+
+
 	    }
 	 }
 
