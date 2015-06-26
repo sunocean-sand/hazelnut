@@ -12,13 +12,13 @@
 					</div>
 				{{else}}
 
-					<div class="edit_hover_class">
+					<div class="">
 					<h4 class="white"{{action "editTitle" on="doubleClick"}}>{{title}}</h4>
 
 					{{!edit}}
 					<span>
-						<i {{action "editTitle"}}>{{fa-icon "pencil" class="white"}}</i>
-						<i {{action "deleteList" list.id}}>{{fa-icon "remove"}}</i>
+						<i {{action "editTitle"}}>{{fa-icon "pencil" class="white " x=2 }}</i>
+						<i {{action "deleteList" list.id}}>{{fa-icon "remove" x=2 }}</i>
 					</span>
 				</div>
 				{{/if}}
