@@ -59,7 +59,8 @@ export default Ember.Route.extend({
             timestamp: new Date()
           };
 
-          controller.set("session.oauthUser", userObj);
+          var session = controller.get("session");
+          session.oauthUser = userObj;
 
           var u1 = controller.store.createRecord('user', userObj);
 
@@ -77,13 +78,24 @@ export default Ember.Route.extend({
 		loginTwitter: function() {
 			var controller = this;
 				controller.get("session").loginTwitter().then(function(user) {
-					console.log(user);
-					console.log(user.uid);
+          var generator = controller.get("createUUID");
+          var uuid = generator();
 
-					controller.store.createRecord('user', {
-					  id: user.uid,
-					  timestamp: new Date()
-					}).save();
+          var userObj = {
+            id: uuid,
+            provider: user.provider,
+            displayName: user.twitter.name,
+            imageThumbUrl: user.twitter.profile_image_url,
+            location: user.twitter.location,
+            timestamp: new Date()
+          };
+
+          var u1 = controller.store.createRecord('user', userObj);
+
+          u1.save();
+          var session = controller.get("session");
+          session.oauthUser = userObj;
+
           window.history.back();
 
 				});
