@@ -56,8 +56,8 @@ var session = Ember.Object.extend({
 				session.set("isAuthenticated", true);
 				session.set('uid', authData.uid);
 				session.set('user', user);
-				ref.child('users').child(authData.uid).set(user);
-				
+				//ref.child('users').child(authData.uid).set(user);
+
 				/*
 				var user = this.store.createRecord('user', {
 					id: authData.uid,
@@ -96,7 +96,7 @@ var session = Ember.Object.extend({
 			return new Ember.RSVP.Promise(function(resolve, reject) {
 				session.get('ref').authWithOAuthPopup('twitter', function(error, user) {
 					if (user) {
-						resolve(user); 
+						resolve(user);
 					} else {
 						reject(error);
 					}
@@ -105,18 +105,6 @@ var session = Ember.Object.extend({
 				{
 					remember: "sessionOnly",
 					scope: "email"
-				});
-			});
-	},
-
-	login: function() {
-			return new Ember.RSVP.Promise((resolve, reject) => {
-				this.get('ref').authWithPassword({
-					email: "",
-					password: ""
-				}, function(error, user) {
-					if (user) { resolve(user); }
-					else { reject(error); }
 				});
 			});
 	},
