@@ -19,6 +19,7 @@ export default Ember.Route.extend({
 
 		if (user) {
 			return this.store.find('user', session.uid);
+
 		} else  {
 			return null;
 		}
@@ -36,10 +37,12 @@ export default Ember.Route.extend({
 			var controller = this;
 				controller.get("session").loginFacebook().then(function(user) {
 					console.log(user);
+                    window.history.back();
+
 				});
 
 			var _this=this;
-			_this.sendAction('dismiss');
+			_this.sendAction('dismiss'); 
 		},
 
 		loginTwitter: function() {
@@ -52,10 +55,13 @@ export default Ember.Route.extend({
 					id: user.uid,
 					timestamp: new Date()
 					});
+                    window.history.back();
+
 				});
 
 			var _this = this;
 			_this.sendAction('dismiss');
+
 		},
 
 
