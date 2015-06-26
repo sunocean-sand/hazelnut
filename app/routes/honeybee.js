@@ -3,11 +3,12 @@ import Ember from 'ember';
 
 
 export default Ember.Route.extend(/*ResetScroll,*/ {
-/*
+
 	activate: function() {
-		this._super.apply(this, arguments);
+		this._super();
+        window.scrollTo(0,0);
 	},
-	*/
+
 
 	model: function(params) {
 		return this.store.find('list', params.list_id);
