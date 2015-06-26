@@ -32,13 +32,23 @@ export default Ember.Route.extend({
 
 			var list = this.get('controller.model');
 
+			var listRef = ref.child('lists');
 
+				listRef.child(list.id).child('todos').once('value', function(allTodosSnapshot) {
+					allTodosSnapshot.forEach(function(todoSnapshot) {
+						var key = todoSnapshot.key(); //firebase id
+						console.log(key);
+
+						var childData = todoSnapshot.val();
+						console.log(childData.title);
+					});
+				});
+
+
+
+/*
 
 			list.save().then(function(list) {
-
-				//ref.child('lists').push({
-				//	user: uid
-				//});
 				  list.get('todos').then(function(todos){
 				  	todos.forEach(function(todo){
 				  		todo.save();
@@ -56,7 +66,7 @@ export default Ember.Route.extend({
 				user: uid
 			});
 
-
+*/
 			var _this=this;	
 			_this.transitionTo('honeybee', list);
 
