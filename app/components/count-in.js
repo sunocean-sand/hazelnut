@@ -13,11 +13,20 @@ export default Ember.Component.extend({
 
 			var ref = this.get('session.ref');
 			var uid = this.get('session.uid');
+
+
 			
 
 			if (session.isAuthenticated) {
 
 				var todo= this.get('todo');
+
+                //Change button color and text
+                //cosmetic hack
+
+                
+                $(".btn-countin").css("background-color","#FF66CC");
+                $(".btn-countin").find(".source-code").text("I'm in!");
 
 				var store = this.get('store');
 
@@ -27,6 +36,9 @@ export default Ember.Component.extend({
 					user: uid,
 					unprocessed: true
 				});
+
+
+
 
 /*
 				var helper = store.createRecord('helper', {
