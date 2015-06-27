@@ -24,16 +24,18 @@ export default Ember.Route.extend({
 		console.log(session.uid);
 		//returns the actually logged in uid with provider name
 
-		//this.get("session").then(function(user) {
+		this.get("session").then(function(user) {
 
 		if (user) {
-			return this.store.find('user', session.uid);
+			return this.store.find('user', session.oauthUser.id);
 
 		} else  {
 			return null;
 		}
+		});
 	},
 */
+
 
 	actions: {
 
@@ -84,9 +86,9 @@ export default Ember.Route.extend({
           var userObj = {
             id: uuid,
             provider: user.provider,
-            displayName: user.twitter.name,
-            imageThumbUrl: user.twitter.profile_image_url,
-            location: user.twitter.location,
+            displayName: user.twitter.cachedUserProfile.name,
+            imageThumbUrl: user.twitter.cachedUserProfile.profile_image_url,
+            location: user.twitter.cachedUserProfile.location,
             timestamp: new Date()
           };
 

@@ -14,7 +14,7 @@ export default Ember.Route.extend({
 
 	actions: {
 
-		createStack: function() {
+		createStack: function(store) {
 
 			//check for authentication
 			var session = this.get('session');
@@ -23,6 +23,10 @@ export default Ember.Route.extend({
 			var uid = this.get('session.uid');
 
 			var todo = this.get('controller.model.todo');
+
+			//var store = this.get('store');
+			console.log(store);
+
 
 
 			var oauthUser = this.get('session.oauthUser');
@@ -61,11 +65,17 @@ export default Ember.Route.extend({
 				  });
 				});
 
+		//	user.get('list').addObject(list);
+		//		user.save();
 
-			var userInstance = this.store.get('users', oauthUser).then(function() {
+/*
+			var userInstance = store.get('user', oauthUser.id);
+
+			userInstance.then(function() {
 					userInstance.get('list').addObject(list);
 					userInstance.save();
 			});
+
 
 
 
@@ -80,7 +90,7 @@ export default Ember.Route.extend({
 			ref.child('lists').child(list.id).push({
 				user: uid
 			});
-
+*/
 
 			var _this=this;	
 			_this.transitionTo('honeybee', list);

@@ -45,14 +45,14 @@ export default Ember.Route.extend(/*ResetScroll,*/ {
 
 				var list = this.modelFor(this.routeName);
 
-/*
+
 				var todo = this.store.createRecord('todo', {
 					title: newTodoTitle,
 					list: list,
-					user: session.currentUser.uid,
+					//user: session.currentUser.uid,
 					timestamp: new Date()
 				});
-*/
+/*
 				var _this=this;
 
 				var todoRef = ref.child('todos');
@@ -104,7 +104,7 @@ export default Ember.Route.extend(/*ResetScroll,*/ {
 			
 
 				this.controllerFor(this.routeName).set('newTodoTitle', '');
-/*
+
 				var _this=this;
 
 				todo.save().then(function(todo) {
@@ -118,7 +118,7 @@ export default Ember.Route.extend(/*ResetScroll,*/ {
 						console.log('fail', fail);
 					});
 				});
-*/
+
 
 			} else {
 				this.transitionTo({queryParams: {foo: true}});

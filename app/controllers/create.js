@@ -11,14 +11,16 @@ export default Ember.Controller.extend({
 
 	actions: {
 
-	    addTodo: function() {
+	    addTodo: function(store) {
 
 
-	    	var user = this.controllerFor('application').get('model');
+	    	//var user = this.controllerFor('application').get('model');
+			//var oauthUser = this.get('session.oauthUser');
+
 
 	    	var todo = this.store.createRecord('todo', {
 	    		title: this.get('model.todos.title'),
-	    		user: user,
+	    		//user: user
 	    	});
 	    	
 	    	var list = this.get('model');
