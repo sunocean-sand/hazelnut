@@ -57,22 +57,21 @@ export default Ember.Route.extend({
 					});
 				});
 */
-
+/*
 			var userCallback = function() {
 
 				ref.child('lists').child(list.id).child(uid).push({
 					user: uid
 				});
-
-<<<<<<< HEAD
 			}
+
+*/
 
 			var user = this.get('session.user');
 			console.log(this.get('session.user'));
 
 
-=======
->>>>>>> jessdev
+
 			list.save().then(function(list) {
 				  list.get('todos').then(function(todos){
 				  	todos.forEach(function(todo){
@@ -81,10 +80,6 @@ export default Ember.Route.extend({
 				  });
 				});
 
-<<<<<<< HEAD
-			user.get('lists').addObject(list);
-			user.save();
-=======
 		//	user.get('list').addObject(list);
 		//		user.save();
 
@@ -96,27 +91,11 @@ export default Ember.Route.extend({
 					userInstance.save();
 			});
 
-
-
-
-
-
->>>>>>> jessdev
-
-
-
-<<<<<<< HEAD
-				ref.child('lists').child(list.id).push({
-					user: uid
-				});
-
-
-=======
 			ref.child('lists').child(list.id).push({
 				user: uid
 			});
 */
->>>>>>> jessdev
+
 
 			var _this=this;	
 
