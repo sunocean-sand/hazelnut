@@ -14,7 +14,7 @@ export default Ember.Route.extend({
 
 	actions: {
 
-		createStack: function() {
+		createStack: function(store) {
 
 			//check for authentication
 			var session = this.get('session');
@@ -23,6 +23,18 @@ export default Ember.Route.extend({
 			var uid = this.get('session.uid');
 
 			var todo = this.get('controller.model.todo');
+
+			//var store = this.get('store');
+			console.log(store);
+
+
+
+			var oauthUser = this.get('session.oauthUser');
+			console.log(oauthUser);
+
+			
+
+
 
 
 			if (session.isAuthenticated) {
@@ -52,12 +64,15 @@ export default Ember.Route.extend({
 					user: uid
 				});
 
+<<<<<<< HEAD
 			}
 
 			var user = this.get('session.user');
 			console.log(this.get('session.user'));
 
 
+=======
+>>>>>>> jessdev
 			list.save().then(function(list) {
 				  list.get('todos').then(function(todos){
 				  	todos.forEach(function(todo){
@@ -66,16 +81,42 @@ export default Ember.Route.extend({
 				  });
 				});
 
+<<<<<<< HEAD
 			user.get('lists').addObject(list);
 			user.save();
+=======
+		//	user.get('list').addObject(list);
+		//		user.save();
+
+/*
+			var userInstance = store.get('user', oauthUser.id);
+
+			userInstance.then(function() {
+					userInstance.get('list').addObject(list);
+					userInstance.save();
+			});
 
 
 
+
+
+
+>>>>>>> jessdev
+
+
+
+<<<<<<< HEAD
 				ref.child('lists').child(list.id).push({
 					user: uid
 				});
 
 
+=======
+			ref.child('lists').child(list.id).push({
+				user: uid
+			});
+*/
+>>>>>>> jessdev
 
 			var _this=this;	
 

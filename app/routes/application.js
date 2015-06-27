@@ -2,6 +2,15 @@ import Ember from 'ember';
 
 
 export default Ember.Route.extend({
+  createUUID: function guid() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+  },
 
 
 	model: function() {
@@ -9,22 +18,25 @@ export default Ember.Route.extend({
 		//returns everyones info
 		return this.store.find('user');
 		var session = this.get('session');
-		
+
 		console.log(session.uid);
 		//returns the actually logged in uid with provider name
 
 		this.get("session").then(function(user) {
 
 		if (user) {
-			return this.store.find('user', session.uid);
+			return this.store.find('user', session.oauthUser.id);
 
 		} else  {
 			return null;
 		}
+		});
 	},
 
 
+
 	actions: {
+
 
 		login: function() {
 			var controller = this;
@@ -34,26 +46,57 @@ export default Ember.Route.extend({
 		loginFacebook: function() {
 			var controller = this;
 				controller.get("session").loginFacebook().then(function(user) {
-					console.log(user);
-                    window.history.back();
+          var generator = controller.get("createUUID");
+          var uuid = generator();
+
+          var userObj = {
+            id: uuid,
+            provider: user.provider,
+            displayName: user.facebook.displayName,
+            email: user.facebook.email,
+            imageThumbUrl: user.facebook.cachedUserProfile.picture.data.url,
+            location: user.facebook.cachedUserProfile.locale,
+            timestamp: new Date()
+          };
+
+          var session = controller.get("session");
+          session.oauthUser = userObj;
+
+          var u1 = controller.store.createRecord('user', userObj);
+
+          u1.save();
+
+
+          window.history.back();
 
 				});
 
 			var _this=this;
-			_this.sendAction('dismiss'); 
+			_this.sendAction('dismiss');
 		},
 
 		loginTwitter: function() {
 			var controller = this;
 				controller.get("session").loginTwitter().then(function(user) {
-					console.log(user);
-					console.log(user.uid);
+          var generator = controller.get("createUUID");
+          var uuid = generator();
+          console.log(user);
+          var userObj = {
+            id: uuid,
+            provider: user.provider,
+            displayName: user.twitter.cachedUserProfile.name,
+            imageThumbUrl: user.twitter.cachedUserProfile.profile_image_url,
+            location: user.twitter.cachedUserProfile.location,
+            timestamp: new Date()
+          };
 
-					var user = controller.store.createRecord('user', {
-					id: user.uid,
-					timestamp: new Date()
-					});
-                    window.history.back();
+          var u1 = controller.store.createRecord('user', userObj);
+
+          u1.save();
+          var session = controller.get("session");
+          session.oauthUser = userObj;
+
+          window.history.back();
 
 				});
 

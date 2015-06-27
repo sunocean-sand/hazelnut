@@ -6,7 +6,7 @@
 {{!save or cancel}}
 <div class="row">
 	<span class="pull-left">{{#link-to 'main'}}<button class="btn-gray source-code">X</button>{{/link-to}}</span>
-	<span class="pull-right"><button class="btn-gray source-code" {{action "createStack"}}>Save</button></span>
+	<span class="pull-right"><button class="btn-gray source-code" {{action "createStack" store}}>Save</button></span>
 </div>
 
 
@@ -30,7 +30,7 @@
 		{{input type="text" value=model.todos.title action="addTodo" placeholder="Enter a todo"}}
 	</div>
 	<div class="col-xs-2">
-		<button class="btn-pink" {{action "addTodo"}}>+</button>
+		<button class="btn-pink" {{action "addTodo" store}}>+</button>
 	</div>
 </div>
 
