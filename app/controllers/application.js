@@ -29,8 +29,9 @@ export default Ember.Controller.extend({
 		        var ref = new Firebase("https://nutella.firebaseio.com");
 
 				ref.createUser({
-				  email    : this.get('email'),
-				  password : this.get('password')
+					'email' : "jess@handstack.com",
+					'password' : "wowzers"
+
 				}, function(error, userData) {
 				  if (error) {
 				    console.log("Error creating user:", error);

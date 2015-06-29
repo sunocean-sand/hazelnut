@@ -21,10 +21,29 @@ export default Ember.Component.extend({
     	login: function() {
     		this.sendAction('login');
     	},
-
+/*
     	createUser: function() {
     		this.sendAction('createUser');
     	},
+*/
+        createUser: function() {
+
+            var ref = new Firebase("https://nutella.firebaseio.com");
+
+            ref.createUser({
+                'email' : this.get('varemail'),
+                'password' : this.get('varpassword')
+
+            }, function(error, userData) {
+              if (error) {
+                console.log("Error creating user:", error);
+              } else {
+                console.log("Successfully created user account with uid:", userData.uid);
+              }
+            });
+
+        }
+
 
 	},
 
