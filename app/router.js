@@ -6,7 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.modal('login-modal', {
+
+ this.modal('login-modal', {
       withParams: 'foo',
       otherParams: {
           modalMessage: "message"
@@ -27,4 +28,5 @@ export default Router.map(function() {
 
   this.route('profile');
   this.route('create');
+
 });

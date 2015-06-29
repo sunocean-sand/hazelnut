@@ -9,7 +9,7 @@ export default Ember.Component.extend({
 		close: function() {
     		this.sendAction('dismiss');
     	},
-
+/*
     	loginFacebook: function() {
     		this.sendAction('loginFacebook');
     	},
@@ -17,7 +17,7 @@ export default Ember.Component.extend({
     	loginTwitter: function() {
     		this.sendAction('loginTwitter');
     	},
-
+*/
     	login: function() {
     		this.sendAction('login');
     	},
